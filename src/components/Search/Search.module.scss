@@ -1,0 +1,33 @@
+.input {
+  width: 40%;
+  border-radius: 8px 0 0 8px;
+  background-color: var(--bg-color-primary);
+  border: 2px solid #bfde42;
+  border-right: none;
+  padding: 10px 15px;
+  transition: all 0.2s;
+  color: var(--bs-primary-rgb);
+
+  &::placeholder {
+    color: inherit;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(#bfde42, 10%);
+
+    & + .btn {
+      box-shadow: 5px 0 10px rgba(#bfde42, 10%);
+    }
+  }
+}
+
+.btn {
+  border-radius: 0 8px 8px 0;
+  background-color: #bfde42;
+  border-color: #bfde42;
+  &:hover {
+    background-color: #cbe467;
+    border-color: #cbe467;
+  }
+}
