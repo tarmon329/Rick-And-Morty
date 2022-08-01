@@ -33,7 +33,7 @@ const CharacterCard = ({ characterData }) => {
           <div className="fs-6 fw-normal text-secondary">First Seen At: </div>
           <Link
             to={`/episode/${episodeId}`}
-            className={`${styles.link} fs-5 fw-bold ubuntu `}
+            className={`${styles.link} fs-5 ubuntu `}
           >
             {episodeName}
           </Link>

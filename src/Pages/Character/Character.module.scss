@@ -34,3 +34,29 @@
     transition: 0.75s;
   }
 }
+
+@media only screen and (max-width: 62.5em) {
+  .return,
+  .random {
+    width: 49%;
+  }
+
+  .return {
+    order: 1;
+  }
+
+  .random {
+    order: 2;
+  }
+}
+
+@media only screen and (max-width: 22em) {
+  .random {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .return {
+    width: 100%;
+    margin-bottom: 0 !important;
+  }
+}

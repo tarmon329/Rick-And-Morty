@@ -1,21 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
-import { setName, resetFilters } from "../../features/filter/filterSlice";
+import { setName } from "../../features/filter/filterSlice";
 import { resetPage } from "../../features/pagination/paginationSlice";
 import { useDispatch } from "react-redux";
 
 import styles from "./Search.module.scss";
+import useResetState from "../../hooks/useResetState";
 
 let inputTimer = null;
 
 const Search = () => {
   const inputRef = useRef();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(resetFilters());
-    dispatch(resetPage());
-  }, [dispatch]);
+  useResetState();
 
   const submitHandler = (e) => {
     e?.preventDefault();

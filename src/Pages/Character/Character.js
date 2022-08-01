@@ -19,11 +19,11 @@ const Character = () => {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-12 mb-4">
+          <div className={`${styles.return} col-lg-3 col-12`}>
             <button
               onClick={navigateBack}
               type="submit"
-              className={`${styles.btn} btn btn-primary fs-5 mb-4`}
+              className={`${styles.btn}  btn btn-primary fs-5 mb-4`}
             >
               Return
             </button>
@@ -39,7 +39,7 @@ const Character = () => {
               )}
             </div>
           </div>
-          <div className="col-lg-3 col-12">
+          <div className={`${styles.random} col-lg-3 col-12`}>
             <Link
               to={`/characters/${randomNum}`}
               className={`${styles.btn} btn btn-primary fs-5`}
