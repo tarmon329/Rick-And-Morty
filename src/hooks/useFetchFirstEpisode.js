@@ -4,16 +4,16 @@ import getFirstEpisode from "../utils/getFirstEpisode";
 const useFetchFirstEpisode = (episode) => {
   const [episodeData, setEpisodeData] = useState({
     episodeName: "",
-    episodeUrl: "",
+    episodeId: "",
   });
 
   useEffect(() => {
     (async () => {
-      const { name, url } = await getFirstEpisode(episode[0]);
+      const { name, id } = await getFirstEpisode(episode[0]);
 
       setEpisodeData({
         episodeName: name,
-        episodeUrl: url,
+        episodeId: id,
       });
     })();
   }, [episode]);

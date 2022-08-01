@@ -1,0 +1,88 @@
+.card {
+  border: 2px solid #666;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--bg-color-primary);
+  transition: all 0.3s;
+
+  @media only screen and (min-width: 62.5em) {
+    &:hover {
+      & .image {
+        filter: grayscale(100%);
+        transform: translateY(-10%);
+      }
+
+      & .content {
+        transform: translateY(-2.5rem);
+        transition: all 0.5s ease;
+      }
+    }
+  }
+}
+
+.content {
+  padding: 10px;
+  position: relative;
+  background-color: inherit;
+  transition: all 0.5s ease;
+}
+
+.link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--bs-body-color);
+  }
+
+  &:hover,
+  &:active {
+    color: var(--color-primary);
+  }
+}
+
+.badge {
+  top: 10px;
+  right: 20px;
+  font-size: 17px;
+
+  &.Alive {
+    background-color: #006400;
+  }
+
+  &.Dead {
+    background-color: #d42a34;
+  }
+
+  &.unknown {
+    background-color: #444;
+  }
+}
+
+.image {
+  transition: all 0.5s ease;
+
+  @media only screen and (max-width: 62.5em) {
+    width: 100%;
+  }
+}
+
+.hidden-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: none;
+  text-align: end;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #bfde42;
+  width: 100%;
+  padding-right: 1rem;
+
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  transform: translateY(2.5rem);
+
+  &:hover {
+    color: #fff;
+  }
+}

@@ -3,7 +3,7 @@ import * as LottiePlayer from "@lottiefiles/lottie-player";
 
 const Loader = () => {
   return (
-    <div className="d-flex justify-content-center flex-column align-items-start gap-4">
+    <div className="d-flex justify-content-center flex-column align-items-center">
       <lottie-player
         autoplay
         loop
@@ -11,7 +11,7 @@ const Loader = () => {
         speed="1"
         background="transparent"
         src="https://assets3.lottiefiles.com/packages/lf20_ncnqwseq.json"
-        style={{ width: "300px", height: "300px" }}
+        style={{ width: "400px", height: "400px" }}
       ></lottie-player>
     </div>
   );

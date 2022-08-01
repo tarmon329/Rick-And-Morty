@@ -7,7 +7,6 @@ const Cards = ({ charactersData, error }) => {
   if (!charactersData || error) {
     return <NoCharacters error={error} />;
   }
-
   return (
     <React.Fragment>{createCharactersDisplay(charactersData)}</React.Fragment>
   );

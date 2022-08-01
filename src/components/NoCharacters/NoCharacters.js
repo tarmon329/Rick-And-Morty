@@ -3,7 +3,7 @@ import * as LottiePlayer from "@lottiefiles/lottie-player";
 
 const NoCharacters = ({ error }) => {
   return (
-    <div className="d-flex justify-content-center flex-column align-items-start gap-4">
+    <div className="d-flex justify-content-center flex-column align-items-center gap-4 text-center">
       <h1 className="text-danger">No Characters Found</h1>
       {error && <h2 className="fs-5">{error.message}</h2>}
       <lottie-player

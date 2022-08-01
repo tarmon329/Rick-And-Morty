@@ -1,0 +1,36 @@
+.btn {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-primary-light);
+  --bs-btn-hover-border-color: var(--color-primary-light);
+  --bs-btn-focus-shadow-rgb: 191, 222, 66;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--color-primary);
+  --bs-btn-active-border-color: var(--color-primary);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(191, 222, 66, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--color-primary-light);
+  --bs-btn-disabled-border-color: var(--color-primary-light);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primary-dark);
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    left: -32px;
+    transform: rotate(-16deg);
+    filter: blur(6px);
+  }
+
+  &:hover::before {
+    left: calc(100% + 32px);
+    transition: 0.75s;
+  }
+}

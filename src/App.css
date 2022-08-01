@@ -1,3 +1,18 @@
-.active {
-  box-shadow: 0 3px 0 white, 0 5px 0 var(--bs-pagination-active-bg);
+.nav-link.active {
+  color: var(--color-primary) !important;
+  font-weight: bold;
+  border-bottom: 3px solid var(--color-primary);
+}
+
+@media screen and (max-width: 62.5em) {
+  .nav-link {
+    padding: 0;
+    margin: 1rem;
+  }
+
+  .nav-link.active {
+    border-bottom: none;
+    box-shadow: -1rem 0 0 var(--bg-color-primary),
+      -1.2rem 0 0 var(--color-primary);
+  }
 }

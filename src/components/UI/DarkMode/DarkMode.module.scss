@@ -12,8 +12,15 @@
   color: hsl(240, 100%, 95%);
 
   position: fixed;
-  top: 2.5rem;
-  right: 2.5rem;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 100;
+
+  @media screen and (max-width: 68.75em) {
+    top: unset;
+    bottom: 1.2rem;
+    right: 1.2rem;
+  }
 
   transition: all 500ms;
 

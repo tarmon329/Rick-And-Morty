@@ -1,19 +1,31 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+
+import { setName, resetFilters } from "../../features/filter/filterSlice";
+import { resetPage } from "../../features/pagination/paginationSlice";
+import { useDispatch } from "react-redux";
+
 import styles from "./Search.module.scss";
 
 let inputTimer = null;
 
-const Search = ({ onSearch, setName }) => {
+const Search = () => {
   const inputRef = useRef();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetFilters());
+    dispatch(resetPage());
+  }, [dispatch]);
+
   const submitHandler = (e) => {
     e?.preventDefault();
     clearTimeout(inputTimer);
-    onSearch(inputRef.current.value);
+    dispatch(resetPage());
+    dispatch(setName(inputRef.current.value));
   };
-  const inputChangeHandler = (e) => {
+  const inputChangeHandler = () => {
     clearTimeout(inputTimer);
     inputTimer = setTimeout(() => {
-      setName(inputRef.current.value);
       submitHandler();
     }, 500);
   };
@@ -21,7 +33,7 @@ const Search = ({ onSearch, setName }) => {
   return (
     <form
       onSubmit={submitHandler}
-      className="d-flex justify-content-center mb-5"
+      className={`${styles.form} d-flex justify-content-center mb-5`}
     >
       <input
         ref={inputRef}
