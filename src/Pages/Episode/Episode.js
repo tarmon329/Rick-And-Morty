@@ -24,7 +24,7 @@ const Episode = () => {
   return (
     <div>
       {!(charactersData?.error || fetchedData?.error) && (
-        <React.Fragment>
+        <header>
           <h1 className="text-center mb-3 ubuntu">
             {fetchedData?.episode}:{" "}
             <span className={styles.name}>{fetchedData?.name}</span>
@@ -32,7 +32,7 @@ const Episode = () => {
           <h1 className="text-center mb-3 ubuntu">
             Aired on: {fetchedData?.air_date}
           </h1>
-        </React.Fragment>
+        </header>
       )}
       <div className="container">
         <div className="row">

@@ -22,10 +22,6 @@ const Characters = () => {
     })();
   }, [pagination, filter, getPageData]);
 
-  // useEffect(() => {
-  //   console.log(results);
-  // }, [results]);
-
   return (
     <div>
       <h1 className="text-center mb-3 ubuntu">Characters</h1>

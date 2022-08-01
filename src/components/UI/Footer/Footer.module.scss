@@ -1,0 +1,18 @@
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-color-primary);
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--bs-body-color);
+      font-weight: 500;
+    }
+    &:hover,
+    &:active {
+      color: var(--color-primary);
+    }
+  }
+}

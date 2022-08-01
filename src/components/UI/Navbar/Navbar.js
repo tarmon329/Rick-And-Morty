@@ -9,9 +9,14 @@ const Navbar = () => {
   };
 
   const closeHandler = () => {
-    if (window.innerWidth < 1000) {
+    const toggler = document.querySelector(".navbar-toggler");
+    if (
+      window.innerWidth < 1000 &&
+      toggler &&
+      toggler.classList.contains(style.active)
+    ) {
       setTimeout(() => {
-        document.querySelector(".navbar-toggler")?.click();
+        toggler.click();
       }, 100);
     }
   };

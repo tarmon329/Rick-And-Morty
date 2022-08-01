@@ -18,6 +18,7 @@ import Navbar from "./components/UI/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import DarkMode from "./components/UI/DarkMode/DarkMode";
 import FOF from "./Pages/FOF/FOF";
+import Footer from "./components/UI/Footer/Footer";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           element={<Navigate to="/location/1" replace />}
         />
       </Routes>
+      <Footer />
     </Router>
   );
 };

@@ -32,7 +32,7 @@ const Location = () => {
   return (
     <React.Fragment>
       {!(charactersData?.error || fetchedData?.error) && (
-        <React.Fragment>
+        <header>
           <h1 className="text-center mb-3 ubuntu">{fetchedData?.name}</h1>
 
           <h2 className="text-center mb-3 ubuntu">
@@ -45,7 +45,7 @@ const Location = () => {
           <h3 className="text-center mb-3 ubuntu">
             Type: <span className={styles.name}>{fetchedData?.type}</span>
           </h3>
-        </React.Fragment>
+        </header>
       )}
       <div className="container">
         <div className="row">
