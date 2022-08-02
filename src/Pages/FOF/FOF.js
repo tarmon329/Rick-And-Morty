@@ -13,7 +13,7 @@ const FOF = () => {
         alt="Giant Head"
         className={`${styles.image} fluid-image`}
       />
-      <h1>How did you get here?</h1>
+      <h1 className={styles.h1}>How did you get here?</h1>
       <button
         onClick={navigateBack}
         type="submit"

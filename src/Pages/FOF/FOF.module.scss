@@ -1,5 +1,5 @@
 .container {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
 
   display: flex;
   flex-direction: column;
@@ -11,8 +11,15 @@
   text-align: center;
 }
 
+.h1 {
+  @media only screen and (max-width: 62.5em) {
+    font-size: 1.5rem;
+  }
+}
+
 .image {
-  width: 30rem;
+  width: 100%;
+  max-width: 30rem;
 }
 
 .btn {
@@ -32,6 +39,11 @@
   --bs-btn-disabled-border-color: var(--color-primary-light);
   position: relative;
   overflow: hidden;
-  width: 30rem;
   min-width: 20rem;
+
+  @media only screen and (max-width: 31.25em) {
+    align-self: stretch;
+    min-width: none;
+    // max-width: 90% !important;
+  }
 }
