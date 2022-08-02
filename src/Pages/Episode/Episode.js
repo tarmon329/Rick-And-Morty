@@ -30,7 +30,8 @@ const Episode = () => {
             <span className={styles.name}>{fetchedData?.name}</span>
           </h1>
           <h1 className="text-center mb-3 ubuntu">
-            Aired on: {fetchedData?.air_date}
+            Aired on:{" "}
+            <span className={styles.date}>{fetchedData?.air_date}</span>
           </h1>
         </header>
       )}
