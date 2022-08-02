@@ -1,10 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./FilterBTN.module.scss";
 import { setFilter } from "../../../features/filter/filterSlice";
 import { resetPage } from "../../../features/pagination/paginationSlice";
+import upperFirstLetter from "../../../utils/upperFirstLetter";
 
 const FilterBTN = ({ type, index, name }) => {
+  const { filter } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const inputClickHandler = () => {
@@ -20,12 +22,14 @@ const FilterBTN = ({ type, index, name }) => {
         type="radio"
         name={type}
         id={`${type}-${index}`}
+        checked={filter[type.toLowerCase()] === name}
+        readOnly
       />
       <label
         className={`${styles.label} btn btn-outline-primary`}
         htmlFor={`${type}-${index}`}
       >
-        {name}
+        {upperFirstLetter(name)}
       </label>
     </div>
   );

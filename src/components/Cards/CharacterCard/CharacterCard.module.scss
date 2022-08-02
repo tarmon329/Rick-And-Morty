@@ -1,11 +1,16 @@
 .card {
   border: 2px solid #666;
   border-radius: 5px;
+  height: 100%;
   overflow: hidden;
   background-color: var(--bg-color-primary);
   transition: all 0.3s;
 
   @media only screen and (min-width: 62.5em) {
+    font-size: x-large;
+    & * {
+      font-size: inherit;
+    }
     &:hover {
       & .image {
         filter: grayscale(100%);
@@ -16,7 +21,20 @@
         transform: translateY(-2.5rem);
         transition: all 0.5s ease;
       }
+
+      & .hidden-button {
+        transform: translateY(0);
+      }
     }
+  }
+}
+
+.name {
+  min-height: 3.6rem;
+  font-size: 1.25rem;
+
+  @media only screen and (max-width: 62.5em) {
+    font-size: 1.5rem;
   }
 }
 
@@ -24,14 +42,24 @@
   padding: 10px;
   position: relative;
   background-color: inherit;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease, background-color 0s;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 .link {
   &:link,
   &:visited {
+    display: inline-block;
     text-decoration: none;
     color: var(--bs-body-color);
+
+    &:first-of-type {
+      min-height: 3.6rem;
+    }
   }
 
   &:hover,
@@ -67,9 +95,7 @@
 }
 
 .hidden-button {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  margin-top: auto;
   border: none;
   text-align: end;
   text-decoration: none;
@@ -78,9 +104,10 @@
   background-color: #bfde42;
   width: 100%;
   padding-right: 1rem;
+  transition: all 0.5s ease;
 
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-  transform: translateY(2.5rem);
+  transform: translateY(100%);
 
   &:hover {
     color: #fff;

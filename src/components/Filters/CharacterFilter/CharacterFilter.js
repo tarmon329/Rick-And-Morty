@@ -1,10 +1,16 @@
 import Category from "../Category/Category";
 import * as options from "../../../data/filterOptions";
 import styles from "./CharacterFilter.module.scss";
+import { useDispatch } from "react-redux";
+import { resetFilters } from "../../../features/filter/filterSlice";
+import { resetPage } from "../../../features/pagination/paginationSlice";
 
 const CharacterFilter = () => {
+  const dispatch = useDispatch();
+
   const clearHandler = () => {
-    window.location.reload(false);
+    dispatch(resetFilters());
+    dispatch(resetPage);
   };
 
   return (

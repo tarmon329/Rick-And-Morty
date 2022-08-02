@@ -17,21 +17,23 @@
   overflow: hidden;
   width: 100%;
 
-  &::before {
-    content: "";
-    position: absolute;
-    background-color: var(--color-primary-dark);
-    width: 8px;
-    top: 0;
-    bottom: 0;
-    left: -32px;
-    transform: rotate(-16deg);
-    filter: blur(6px);
-  }
+  @media (hover: hover) and (pointer: fine) {
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--color-primary-dark);
+      width: 8px;
+      top: 0;
+      bottom: 0;
+      left: -32px;
+      transform: rotate(-16deg);
+      filter: blur(6px);
+    }
 
-  &:hover::before {
-    left: calc(100% + 32px);
-    transition: 0.75s;
+    &:hover::before {
+      left: calc(100% + 32px);
+      transition: 0.75s;
+    }
   }
 }
 
