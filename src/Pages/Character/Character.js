@@ -1,5 +1,5 @@
 import NoCharacters from "../../components/NoCharacters/NoCharacters";
-import CharacterDetail from "./CharacterDetail";
+import CharacterDetail from "./CharacterDetail/CharacterDetail";
 import Loader from "../../components/UI/Loader/Loader";
 
 import useFetchByParams from "../../hooks/useFetchByParams";

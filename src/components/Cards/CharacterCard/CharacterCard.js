@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import useFetchFirstEpisode from "../../../hooks/useFetchFirstEpisode";
 import getLocationId from "../../../utils/getLocationId";
+import upperFirstLetter from "../../../utils/upperFirstLetter";
 
 import styles from "./CharacterCard.module.scss";
 
@@ -47,7 +48,7 @@ const CharacterCard = ({ characterData }) => {
       <div
         className={`position-absolute badge ${styles.badge} ${styles[status]} `}
       >
-        {status}
+        {upperFirstLetter(status)}
       </div>
     </article>
   );

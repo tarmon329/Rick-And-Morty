@@ -1,13 +1,24 @@
 import { Link } from "react-router-dom";
-import useFetchFirstEpisode from "../../hooks/useFetchFirstEpisode";
-import getLocationId from "../../utils/getLocationId";
+
+import createIdArr from "../../../utils/createIdArr";
+import getLocationId from "../../../utils/getLocationId";
+import upperFirstLetter from "../../../utils/upperFirstLetter";
 
 import styles from "./CharacterDetail.module.scss";
+import EpisodeList from "../EpisodeList";
 
 const CharacterDetail = ({ characterData }) => {
-  let { image, name, status, location, episode, gender, species, type } =
-    characterData;
-  const { episodeName, episodeId } = useFetchFirstEpisode(episode);
+  let {
+    image,
+    name,
+    status,
+    location,
+    episode: episodes,
+    gender,
+    species,
+    type,
+  } = characterData;
+
   const locationId = getLocationId(location);
 
   return (
@@ -15,18 +26,18 @@ const CharacterDetail = ({ characterData }) => {
       className={`${styles.card} container d-flex justify-content-center`}
     >
       <div className="d-flex flex-column gap-3">
-        <h1 className={`${styles.name} fs-2 ubuntu fw-bold text-center mb-4`}>
-          {name}
-        </h1>
         <img className={`${styles.image} img-fluid`} src={image} alt={name} />
         <div className={`${styles.content}`}>
           <section className={styles.section}>
-            <h3 className={styles["status__name"]}>
+            <h1 className={`${styles.name} ubuntu fw-bold text-center mb-4`}>
+              {name}
+            </h1>
+            <h2 className={styles["status__name"]}>
               <span
                 className={`${styles.status} ${styles[`status--${status}`]}`}
               ></span>
-              {status}
-            </h3>
+              {upperFirstLetter(status)}
+            </h2>
             <h3 className="fs-4 fw-normal">
               Gender:{" "}
               <span className={`${styles.value} fw-bold`}>{gender}</span>
@@ -53,17 +64,12 @@ const CharacterDetail = ({ characterData }) => {
                 {location.name}
               </Link>
             </div>
-            <div className={styles["link-container"]}>
-              <h4 className="fs-4 fw-normal">First Seen At: </h4>
-              <Link
-                to={`/episode/${episodeId}`}
-                className={`${styles.link} fs-5 fw-bold ubuntu `}
-              >
-                {episodeName}
-              </Link>
-            </div>
           </section>
         </div>
+        <section>
+          <h4 className="fs-4 fw-normal">Featured in:</h4>
+          <EpisodeList episodes={createIdArr("episodes", episodes)} />
+        </section>
       </div>
     </article>
   );
