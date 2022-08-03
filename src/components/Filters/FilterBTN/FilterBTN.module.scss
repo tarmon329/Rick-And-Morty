@@ -4,6 +4,7 @@
   &:checked {
     & + .label {
       background-color: #bfde42;
+      border-color: #bfde42;
       color: #fff;
     }
   }
@@ -18,7 +19,16 @@
   transition: all 0.3s;
 
   &:hover {
+    background-color: var(--bg-color-primary);
     border-color: #bfde42;
-    background-color: #bfde42;
+    color: #bfde42;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: #cde56c;
+      background-color: #cde56c;
+      color: #fff;
+    }
   }
 }
