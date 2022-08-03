@@ -4,30 +4,30 @@ import createRandomNum from "../../utils/createRandomNum";
 
 import img from "./assets/hero-main.png";
 
-import style from "./Home.module.scss";
+import styles from "./Home.module.scss";
 
 const Home = () => {
   const randomNum = createRandomNum();
 
   return (
-    <div className={`${style.hero} hero`}>
-      <div className={style.container}>
+    <div className={`${styles.hero} hero`}>
+      <div className={styles.container}>
         <img
           src={img}
           alt="Rick and Morty Wiki"
-          className={`${style.img} img-fluid`}
+          className={`${styles.img} img-fluid`}
         />
 
-        <div className={`${style.buttons} ubuntu`}>
+        <div className={`${styles.buttons} ubuntu`}>
           <Link
             to={"characters"}
-            className={`${style.btn} ${style["btn--primary"]} ubuntu`}
+            className={`${styles.btn} ${styles["btn--primary"]} ubuntu`}
           >
             All Characters
           </Link>
           <Link
             to={`characters/${randomNum}`}
-            className={`${style.btn} ${style["btn--card"]} btn--card ubuntu`}
+            className={`${styles.btn} ${styles["btn--card"]} btn--card ubuntu`}
           >
             Get Schwifty
           </Link>

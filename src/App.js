@@ -19,12 +19,14 @@ import Home from "./Pages/Home/Home";
 import DarkMode from "./components/UI/DarkMode/DarkMode";
 import FOF from "./Pages/FOF/FOF";
 import Footer from "./components/UI/Footer/Footer";
+import PageStartLink from "./components/UI/PageStartLink/PageStartLink";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
       <DarkMode />
+      <PageStartLink />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/404" element={<FOF />} />

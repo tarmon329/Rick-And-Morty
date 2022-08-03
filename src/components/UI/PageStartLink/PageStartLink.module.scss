@@ -1,0 +1,21 @@
+.link {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1.2rem;
+  z-index: 100;
+
+  color: var(--bs-body-color);
+  background-color: var(--color-primary);
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+
+  @media (hover: hover) and (pointer: fine) {
+    display: none;
+  }
+}

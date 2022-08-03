@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 // import DarkMode from "../DarkMode/DarkMode";
 
-import style from "./Navbar.module.scss";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const toggleHandler = (e) => {
     const btn = e.target.closest("button");
-    btn.classList.toggle(style.active);
+    btn.classList.toggle(styles.active);
   };
 
   const closeHandler = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
     if (
       window.innerWidth < 1000 &&
       toggler &&
-      toggler.classList.contains(style.active)
+      toggler.classList.contains(styles.active)
     ) {
       setTimeout(() => {
         toggler.click();
@@ -23,15 +23,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${style.navbar} navbar navbar-expand-lg mb-4`}>
+    <nav className={`${styles.navbar} navbar navbar-expand-lg mb-4`}>
       <div className="container">
-        <NavLink to="/" className={`${style.logo} nav-logo`}>
+        <NavLink to="/" className={`${styles.logo} nav-logo`}>
           <h1 onClick={closeHandler} className="fs-3 ubuntu navbar-brand">
             Rick & Morty <span className="text-primary">WiKi</span>
           </h1>
         </NavLink>
         <button
-          className={`${style.toggler} navbar-toggler`}
+          className={`${styles.toggler} navbar-toggler`}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -90,17 +90,17 @@ const Navbar = () => {
         >
           <ul className="navbar-nav">
             <li onClick={closeHandler} className="nav-item">
-              <NavLink to="/characters" className={`${style.link} nav-link`}>
+              <NavLink to="/characters" className={`${styles.link} nav-link`}>
                 Characters
               </NavLink>
             </li>
             <li onClick={closeHandler} className="nav-item">
-              <NavLink to="/episode" className={`${style.link} nav-link`}>
+              <NavLink to="/episode" className={`${styles.link} nav-link`}>
                 Episode
               </NavLink>
             </li>
             <li onClick={closeHandler} className="nav-item">
-              <NavLink to="/location" className={`${style.link} nav-link`}>
+              <NavLink to="/location" className={`${styles.link} nav-link`}>
                 Location
               </NavLink>
             </li>
