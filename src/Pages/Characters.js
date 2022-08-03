@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import useFetchCharacters from "../hooks/useFetchCharacters";
 
@@ -12,24 +12,33 @@ import Search from "../components/Search/Search";
 import useScrollCache from "../hooks/useScrollCache";
 
 const Characters = () => {
-  const [isLoader, setIsLoader] = useState(true);
+  const firstFetch = useRef(true);
   const { pagination, filter } = useSelector((state) => state);
-  const [{ info, results, error }, getPageData] = useFetchCharacters();
-  const { currentScroll } = useScrollCache();
-
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: currentScroll, behavior: "instant" });
-    }, 100);
-  }, [currentScroll]);
+  const [{ info, results, error }, getPageData, isLoader] =
+    useFetchCharacters();
+  const { currentScroll, unregister, register } = useScrollCache();
 
   useEffect(() => {
     (async () => {
-      setIsLoader(true);
+      unregister();
       await getPageData({ ...filter, ...pagination });
-      setIsLoader(false);
+      if (firstFetch) {
+        setTimeout(() => {
+          window.scrollTo({ top: currentScroll, behavior: "instant" });
+        }, 5);
+        firstFetch.current = false;
+      }
+      register();
     })();
-  }, [pagination, filter, getPageData]);
+  }, [
+    pagination,
+    filter,
+    getPageData,
+    unregister,
+    register,
+    firstFetch,
+    currentScroll,
+  ]);
 
   return (
     <div>

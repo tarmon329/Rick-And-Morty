@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 class ScrollCache {
   static #queryMap = new Map();
@@ -13,9 +13,11 @@ class ScrollCache {
 }
 
 const useScrollCache = () => {
+  const [isRecording, setIsRecording] = useState(true);
   const currentScroll = ScrollCache.getYOffset() ?? 0;
 
   useEffect(() => {
+    if (!isRecording) return;
     const scrollHandler = () => ScrollCache.setYOffset(window.scrollY);
     setTimeout(() => {
       window.addEventListener("scroll", scrollHandler);
@@ -23,9 +25,17 @@ const useScrollCache = () => {
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, []);
+  }, [isRecording]);
 
-  return { currentScroll };
+  const register = useCallback(() => {
+    setIsRecording(true);
+  }, [setIsRecording]);
+
+  const unregister = useCallback(() => {
+    setIsRecording(true);
+  }, [setIsRecording]);
+
+  return { currentScroll, register, unregister };
 };
 
 export default useScrollCache;
