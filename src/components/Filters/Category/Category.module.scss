@@ -1,3 +1,9 @@
+.type ~ .body [data-checked="true"] {
+  & button {
+    color: var(--color-primary) !important;
+  }
+}
+
 .body {
   display: flex;
   flex-direction: column;

@@ -14,7 +14,6 @@ const PageStartLink = () => {
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <div
       onClick={scrollHandler}
       data-aos="fade-up"

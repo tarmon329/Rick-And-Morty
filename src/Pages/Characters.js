@@ -9,10 +9,19 @@ import Filters from "../components/Filters/CharacterFilter/CharacterFilter";
 import Pagination from "../components/UI/Pagination/Pagination";
 import Search from "../components/Search/Search";
 
+import useScrollCache from "../hooks/useScrollCache";
+
 const Characters = () => {
   const [isLoader, setIsLoader] = useState(true);
   const { pagination, filter } = useSelector((state) => state);
   const [{ info, results, error }, getPageData] = useFetchCharacters();
+  const { currentScroll } = useScrollCache();
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: currentScroll, behavior: "auto" });
+    }, 100);
+  }, [currentScroll]);
 
   useEffect(() => {
     (async () => {

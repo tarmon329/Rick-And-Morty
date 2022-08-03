@@ -18,6 +18,10 @@ const Character = () => {
   const navigateBack = useNavigateBack();
   const randomNum = createRandomNum();
 
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 50);
+
   return (
     <div className="container">
       <div className="row">
