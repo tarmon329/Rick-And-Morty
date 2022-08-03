@@ -2,6 +2,17 @@
   text-align: center;
   padding: 2rem;
   background-color: var(--bg-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & svg {
+    fill: var(--bs-body-color);
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(1px);
+  }
 
   &__link {
     &:link,
