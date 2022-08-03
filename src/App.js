@@ -9,6 +9,8 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import setDarkModePrefrences from "./utils/setDarkModePrefrences";
+
 import Characters from "./Pages/Characters/Characters";
 import Character from "./Pages/Character/Character";
 import Episode from "./Pages/Episode/Episode";
@@ -22,6 +24,8 @@ import Footer from "./components/UI/Footer/Footer";
 import PageStartLink from "./components/UI/PageStartLink/PageStartLink";
 
 const App = () => {
+  setDarkModePrefrences();
+
   return (
     <Router>
       <Navbar />
