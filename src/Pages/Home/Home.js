@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import createRandomNum from "../../utils/createRandomNum";
 
 import img from "./assets/hero-main.png";
+import imgMin from "./assets/hero-main-min.png";
 
 import styles from "./Home.module.scss";
 
@@ -13,7 +14,7 @@ const Home = () => {
     <div className={`${styles.hero} hero`}>
       <div className={styles.container}>
         <img
-          src={img}
+          srcSet={`${imgMin} 1x , ${img} 2x`}
           alt="Rick and Morty Wiki"
           className={`${styles.img} img-fluid`}
         />
