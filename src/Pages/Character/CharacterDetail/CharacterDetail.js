@@ -6,7 +6,7 @@ import upperFirstLetter from "../../../utils/upperFirstLetter";
 
 import styles from "./CharacterDetail.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faUserGear } from "@fortawesome/free-solid-svg-icons";
 import decideIcon from "../../../utils/decideIcon";
 
 import EpisodeList from "../EpisodesList/EpisodesList";
@@ -69,7 +69,7 @@ const CharacterDetail = ({ characterData }) => {
               <h3 className="fs-4 fw-normal">
                 Type:{" "}
                 <FontAwesomeIcon
-                  icon={decideIcon(type)}
+                  icon={type ? faUserGear : decideIcon(type)}
                   className={styles.icon}
                 />
                 <span className={`${styles.value} fw-bold`}>
