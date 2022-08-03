@@ -8,15 +8,14 @@ import { episodesOptions } from "../../data/filterOptions";
 import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";
 import createIdArr from "../../utils/createIdArr";
-import useScrollToTop from "../../utils/scrollToTop";
 
 import styles from "./Episode.module.scss";
+import useScrollCache from "../../hooks/useScrollCache";
 
 const Episode = () => {
   const [fetchedData, isLoader] = useFetchByParams("episode");
   const [charactersData, getPageData] = useFetchMultiCharacters();
-
-  useScrollToTop();
+  useScrollCache("Episode");
 
   useEffect(() => {
     if (fetchedData.length !== 0 && !fetchedData.error) {
@@ -25,7 +24,7 @@ const Episode = () => {
   }, [getPageData, fetchedData]);
 
   return (
-    <div>
+    <React.Fragment>
       {!(charactersData?.error || fetchedData?.error) && (
         <header>
           <h1 className="text-center mb-3 ubuntu">
@@ -54,7 +53,7 @@ const Episode = () => {
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

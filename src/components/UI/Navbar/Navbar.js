@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { resetYOffset } from "../../../hooks/useScrollCache";
-// import DarkMode from "../DarkMode/DarkMode";
 
 import styles from "./Navbar.module.scss";
 
@@ -10,7 +9,7 @@ const Navbar = () => {
     btn.classList.toggle(styles.active);
   };
 
-  const closeHandler = (e) => {
+  const closeHandler = () => {
     const toggler = document.querySelector(".navbar-toggler");
     if (
       window.innerWidth < 1000 &&
@@ -23,9 +22,6 @@ const Navbar = () => {
     }
 
     resetYOffset();
-    if (e.target.closest("navbar-brand")) {
-      console.log("reset");
-    }
   };
 
   return (
