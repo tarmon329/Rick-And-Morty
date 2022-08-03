@@ -21,6 +21,15 @@ const CharacterCard = ({ characterData }) => {
         <div className={`${styles.name} ubuntu fw-bold`}>{name}</div>
         <div className={styles.content__inner}>
           <div>
+            <h4 className="fs-6 fw-normal text-secondary">First Seen At: </h4>
+            <Link
+              to={`/episode/${episodeId}`}
+              className={`${styles.link} fs-5 ubuntu `}
+            >
+              {episodeName}
+            </Link>
+          </div>
+          <div>
             <h4 className="fs-6 fw-normal text-secondary">
               Last Known Location:
             </h4>
@@ -29,15 +38,6 @@ const CharacterCard = ({ characterData }) => {
               className={`${styles.link} fs-5 ubuntu`}
             >
               {location.name}
-            </Link>
-          </div>
-          <div>
-            <h4 className="fs-6 fw-normal text-secondary">First Seen At: </h4>
-            <Link
-              to={`/episode/${episodeId}`}
-              className={`${styles.link} fs-5 ubuntu `}
-            >
-              {episodeName}
             </Link>
           </div>
         </div>
