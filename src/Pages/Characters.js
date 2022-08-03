@@ -19,7 +19,7 @@ const Characters = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      window.scrollTo({ top: currentScroll, behavior: "auto" });
+      window.scrollTo({ top: currentScroll, behavior: "instant" });
     }, 100);
   }, [currentScroll]);
 
