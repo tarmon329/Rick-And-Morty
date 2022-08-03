@@ -19,7 +19,7 @@ const PageStartLink = () => {
       onClick={scrollHandler}
       data-aos="fade-up"
       data-aos-offset="800"
-      class={`${styles.link} aos-init aos-animate`}
+      className={`${styles.link} aos-init aos-animate`}
     >
       ↑
     </div>

@@ -18,6 +18,8 @@ export const filterSlice = createSlice({
       return { ...state, [action.payload.type]: action.payload.value };
     },
     resetFilters: (state, action) => {
+      const inputsArr = document.querySelectorAll("input[data-checked]");
+      inputsArr.forEach((inp) => inp.setAttribute("data-checked", "false"));
       return initialState;
     },
   },
