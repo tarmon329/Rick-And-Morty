@@ -10,7 +10,13 @@ class ScrollCache {
   static getYOffset() {
     return this.#queryMap.get(1);
   }
+
+  static resetYOffset() {
+    this.#queryMap.set(1, 0);
+  }
 }
+
+export const resetYOffset = ScrollCache.resetYOffset.bind(ScrollCache);
 
 const useScrollCache = () => {
   const currentScroll = ScrollCache.getYOffset() ?? 0;
