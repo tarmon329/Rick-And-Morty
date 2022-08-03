@@ -8,12 +8,15 @@ import { episodesOptions } from "../../data/filterOptions";
 import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";
 import createIdArr from "../../utils/createIdArr";
+import useScrollToTop from "../../utils/scrollToTop";
 
 import styles from "./Episode.module.scss";
 
 const Episode = () => {
   const [fetchedData, isLoader] = useFetchByParams("episode");
   const [charactersData, getPageData] = useFetchMultiCharacters();
+
+  useScrollToTop();
 
   useEffect(() => {
     if (fetchedData.length !== 0 && !fetchedData.error) {

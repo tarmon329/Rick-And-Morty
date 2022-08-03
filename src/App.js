@@ -9,7 +9,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Characters from "./Pages/Characters";
+import Characters from "./Pages/Characters/Characters";
 import Character from "./Pages/Character/Character";
 import Episode from "./Pages/Episode/Episode";
 import Location from "./Pages/Location/Location";

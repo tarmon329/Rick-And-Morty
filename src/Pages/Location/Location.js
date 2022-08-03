@@ -8,6 +8,7 @@ import useFetchByParams from "../../hooks/useFetchByParams";
 import createLocationDisplay from "../../utils/createLocationDisplay";
 
 import createIdArr from "../../utils/createIdArr";
+import useScrollToTop from "../../utils/scrollToTop";
 
 import { locationsOptions } from "../../data/filterOptions";
 
@@ -16,6 +17,8 @@ import styles from "./Location.module.scss";
 const Location = () => {
   const [fetchedData, isLoader] = useFetchByParams("location");
   const [charactersData, getPageData] = useFetchMultiCharacters();
+
+  useScrollToTop();
 
   useEffect(() => {
     if (

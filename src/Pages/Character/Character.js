@@ -8,6 +8,7 @@ import useFetchByParams from "../../hooks/useFetchByParams";
 import useNavigateBack from "../../hooks/useNavigateBack";
 
 import createRandomNum from "../../utils/createRandomNum";
+import useScrollToTop from "../../utils/scrollToTop";
 
 import styles from "./Character.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,9 +19,7 @@ const Character = () => {
   const navigateBack = useNavigateBack();
   const randomNum = createRandomNum();
 
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 50);
+  useScrollToTop();
 
   return (
     <div className="container">
