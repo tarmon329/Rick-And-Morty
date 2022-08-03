@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import NoCharacters from "../../components/NoCharacters/NoCharacters";
 import CharacterDetail from "./CharacterDetail/CharacterDetail";
 import Loader from "../../components/UI/Loader/Loader";
@@ -8,7 +10,8 @@ import useNavigateBack from "../../hooks/useNavigateBack";
 import createRandomNum from "../../utils/createRandomNum";
 
 import styles from "./Character.module.scss";
-import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesLeft, faDice } from "@fortawesome/free-solid-svg-icons";
 
 const Character = () => {
   const [fetchedData, isLoader] = useFetchByParams("character");
@@ -18,16 +21,17 @@ const Character = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className={`${styles.return} col-lg-3 col-12`}>
-          <button
-            onClick={navigateBack}
-            type="submit"
-            className={`${styles.btn}  btn btn-primary fs-5 mb-4`}
-          >
+        <div className={`${styles.buttons} col-lg-3 col-12`}>
+          <button onClick={navigateBack} type="submit" className={styles.btn}>
+            <FontAwesomeIcon className={styles.icon} icon={faAnglesLeft} />
             Return
           </button>
+          <Link to={`/characters/${randomNum}`} className={styles.btn}>
+            <FontAwesomeIcon className={styles.icon} icon={faDice} />
+            Get Schwifty
+          </Link>
         </div>
-        <div className="col-lg-6 col-12 mb-4">
+        <div className="col-lg-8 col-12 mb-4">
           <div className="position-relative">
             {isLoader && <Loader />}
             {!isLoader && fetchedData.error && (
@@ -37,14 +41,6 @@ const Character = () => {
               <CharacterDetail characterData={fetchedData} />
             )}
           </div>
-        </div>
-        <div className={`${styles.random} col-lg-3 col-12`}>
-          <Link
-            to={`/characters/${randomNum}`}
-            className={`${styles.btn} btn btn-primary fs-5`}
-          >
-            Get Schwifty
-          </Link>
         </div>
       </div>
     </div>

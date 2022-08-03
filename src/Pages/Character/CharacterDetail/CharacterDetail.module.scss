@@ -1,3 +1,9 @@
+.article {
+  @media only screen and (max-width: 766px) {
+    flex-direction: column;
+  }
+}
+
 .image {
   position: relative;
   border-radius: 20px;
@@ -33,6 +39,14 @@
   margin-bottom: 1.5rem;
 }
 
+.featuredIn {
+  margin-left: 3vw;
+
+  @media only screen and (max-width: 766px) {
+    margin-left: 0;
+  }
+}
+
 .link-container {
   margin-bottom: 2rem;
 }
@@ -41,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: -2rem;
   margin-bottom: 2rem;
   font-size: 1.5rem;
 }
