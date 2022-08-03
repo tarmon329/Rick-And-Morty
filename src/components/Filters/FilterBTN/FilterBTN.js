@@ -27,7 +27,7 @@ const FilterBTN = ({ type, index, name }) => {
     <div className="form-check">
       <input
         onClick={inputClickHandler}
-        className={`${styles.input}`}
+        className={`${styles.input} BTN-${type}`}
         type="radio"
         name={type}
         data-checked="false"

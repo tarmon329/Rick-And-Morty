@@ -1,7 +1,7 @@
 import { setFilter } from "../features/filter/filterSlice";
 
 const toggleInputsData = ({ input, type, name }, dispatch) => {
-  const inputsArr = document.querySelectorAll("input[data-checked]");
+  const inputsArr = document.querySelectorAll(`.BTN-${type}`);
   if (input.getAttribute("data-checked") === "true") {
     inputsArr.forEach((inp) => {
       if (inp === input) {
