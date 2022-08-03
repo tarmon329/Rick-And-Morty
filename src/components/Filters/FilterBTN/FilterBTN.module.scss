@@ -17,10 +17,8 @@
   background-color: var(--bg-color-primary);
   transition: all 0.3s;
 
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      border-color: #bfde42;
-      background-color: #bfde42;
-    }
+  &:hover {
+    border-color: #bfde42;
+    background-color: #bfde42;
   }
 }
