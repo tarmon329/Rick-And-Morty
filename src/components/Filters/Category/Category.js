@@ -1,8 +1,15 @@
+import { useSelector } from "react-redux";
+
 import createFilterBtns from "../../../utils/createFilterBtns";
+import upperFirstLetter from "../../../utils/upperFirstLetter";
 
 import styles from "./Category.module.scss";
 
 const Category = ({ type, options }) => {
+  const { filter } = useSelector((state) => state);
+
+  const activeFilter = `- ${upperFirstLetter(filter[type.toLowerCase()])}`;
+
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id={`heading${type}`}>
@@ -14,7 +21,7 @@ const Category = ({ type, options }) => {
           aria-expanded="false"
           aria-controls={`collapse${type}`}
         >
-          {type}
+          {type} {filter[type.toLowerCase()] ? activeFilter : ""}
         </button>
       </h2>
       <div
