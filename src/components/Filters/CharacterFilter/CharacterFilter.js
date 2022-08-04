@@ -10,7 +10,7 @@ const CharacterFilter = () => {
 
   const clearHandler = () => {
     dispatch(resetFilters());
-    dispatch(resetPage);
+    dispatch(resetPage());
   };
 
   return (
