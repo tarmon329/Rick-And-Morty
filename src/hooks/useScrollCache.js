@@ -12,7 +12,9 @@ class ScrollCache {
   }
 
   static resetYOffset() {
-    this.#queryMap.forEach((_, key, map) => map[key] === 0);
+    for (const key of this.#queryMap.keys()) {
+      this.#queryMap.set(key, 0);
+    }
   }
 }
 
