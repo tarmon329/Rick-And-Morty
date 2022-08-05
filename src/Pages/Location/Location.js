@@ -9,7 +9,7 @@ import createLocationDisplay from "../../utils/createLocationDisplay";
 
 import createIdArr from "../../utils/createIdArr";
 
-import { locationsOptions } from "../../data/filterOptions";
+import { locationsOptions } from "../../constants/filterOptions";
 
 import styles from "./Location.module.scss";
 import useScrollCache from "../../hooks/useScrollCache";
@@ -29,7 +29,7 @@ const Location = () => {
     }
   }, [getPageData, fetchedData]);
 
-  const characterDispaly = createLocationDisplay(fetchedData, charactersData);
+  const characterDisplay = createLocationDisplay(fetchedData, charactersData);
 
   return (
     <React.Fragment>
@@ -55,7 +55,7 @@ const Location = () => {
           <div className="col-lg-8 col-12">
             <div className="row ">
               {isLoader && <Loader />}
-              {!isLoader && characterDispaly}
+              {!isLoader && characterDisplay}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import Category from "../Category/Category";
-import * as options from "../../../data/filterOptions";
+import * as options from "../../../constants/filterOptions";
 import styles from "./CharacterFilter.module.scss";
 import { useDispatch } from "react-redux";
 import { resetFilters } from "../../../features/filter/filterSlice";

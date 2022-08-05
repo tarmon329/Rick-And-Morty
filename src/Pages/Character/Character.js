@@ -34,7 +34,7 @@ const Character = () => {
             Get Schwifty
           </Link>
         </div>
-        <div className="col-lg-8 col-12 mb-4">
+        <div className="col-lg-8 col-12">
           <div className="position-relative">
             {isLoader && <Loader />}
             {!isLoader && fetchedData.error && (

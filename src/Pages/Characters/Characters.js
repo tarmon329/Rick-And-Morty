@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useFetchCharacters from "../../hooks/useFetchCharacters";
 
@@ -9,8 +9,6 @@ import Pagination from "../../components/UI/Pagination/Pagination";
 import Search from "../../components/Search/Search";
 
 import useScrollCache from "../../hooks/useScrollCache";
-
-import styles from "./Characters.module.scss";
 
 const Characters = () => {
   const [isLoader, setIsLoader] = useState(true);
@@ -27,7 +25,7 @@ const Characters = () => {
   }, [pagination, filter, getPageData]);
 
   return (
-    <div className={styles.container}>
+    <React.Fragment>
       <h1 className="text-center mb-3 ubuntu">Characters</h1>
       <Search />
       <div className="container">
@@ -42,7 +40,7 @@ const Characters = () => {
         </div>
       </div>
       {!isLoader && <Pagination info={info} page={pagination.page} />}
-    </div>
+    </React.Fragment>
   );
 };
 export default Characters;

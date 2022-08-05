@@ -16,9 +16,9 @@ import Characters from "./Pages/Characters/Characters";
 import Character from "./Pages/Character/Character";
 import Episode from "./Pages/Episode/Episode";
 import Location from "./Pages/Location/Location";
+import Home from "./Pages/Home/Home";
 
 import Navbar from "./components/UI/Navbar/Navbar";
-import Home from "./Pages/Home/Home";
 import DarkMode from "./components/UI/DarkMode/DarkMode";
 import Footer from "./components/UI/Footer/Footer";
 import PageStartLink from "./components/UI/PageStartLink/PageStartLink";

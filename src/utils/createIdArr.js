@@ -1,23 +1,21 @@
 const createIdArr = (type, arr) => {
-  if (type === "episode") {
-    return arr.characters.map((character) => {
+  const mapData = (data) => {
+    return data.map((character) => {
       const index = character.lastIndexOf("/");
       return character.slice(index + 1);
     });
+  };
+
+  if (type === "episode") {
+    return mapData(arr.characters);
   }
 
   if (type === "episodes") {
-    return arr.map((character) => {
-      const index = character.lastIndexOf("/");
-      return character.slice(index + 1);
-    });
+    return mapData(arr);
   }
 
   if (type === "location") {
-    return arr.residents.map((character) => {
-      const index = character.lastIndexOf("/");
-      return character.slice(index + 1);
-    });
+    return mapData(arr.residents);
   }
 };
 

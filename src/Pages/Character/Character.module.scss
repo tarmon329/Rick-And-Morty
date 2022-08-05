@@ -28,6 +28,11 @@
 
   @media only screen and (max-width: 62.5em) {
     margin-bottom: 2rem;
-    gap: 10vw;
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 47.25em) {
+    margin-bottom: 2rem;
+    justify-content: space-evenly;
   }
 }

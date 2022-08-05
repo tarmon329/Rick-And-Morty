@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import getFirstEpisode from "../utils/getFirstEpisode";
+import fetchFirstEpisode from "../api/fetchFirstEpisode";
 
-const useFetchFirstEpisode = (episode) => {
+const useFetchFirstEpisode = (episodes) => {
   const [episodeData, setEpisodeData] = useState({
     episodeName: "",
     episodeId: "",
@@ -9,14 +9,14 @@ const useFetchFirstEpisode = (episode) => {
 
   useEffect(() => {
     (async () => {
-      const { name, id } = await getFirstEpisode(episode[0]);
+      const { name, id } = await fetchFirstEpisode(episodes[0]);
 
       setEpisodeData({
         episodeName: name,
         episodeId: id,
       });
     })();
-  }, [episode]);
+  }, [episodes]);
 
   return episodeData;
 };

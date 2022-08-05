@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { resetYOffset } from "../../../hooks/useScrollCache";
 
@@ -9,19 +10,41 @@ const Navbar = () => {
     btn.classList.toggle(styles.active);
   };
 
-  const closeHandler = () => {
-    const toggler = document.querySelector(".navbar-toggler");
-    if (
-      window.innerWidth < 1000 &&
-      toggler &&
-      toggler.classList.contains(styles.active)
-    ) {
-      setTimeout(() => {
-        toggler.click();
-      }, 100);
-    }
+  useEffect(() => {
+    const closeHandler = (e) => {
+      const toggler = document.querySelector(".navbar-toggler");
+      const el = e.target.closest(".navbar-toggler");
+      if (
+        window.innerWidth < 1000 &&
+        toggler?.classList.contains(styles.active) &&
+        el !== toggler
+      ) {
+        setTimeout(() => {
+          toggler.click();
+        }, 100);
+      }
+    };
 
+    document.documentElement.addEventListener("click", closeHandler);
+
+    return () => {
+      document.documentElement.removeEventListener("click", closeHandler);
+    };
+  }, []);
+
+  const closeHandler = () => {
     resetYOffset();
+    // const toggler = document.querySelector(".navbar-toggler");
+    // if (
+    //   window.innerWidth < 1000 &&
+    //   toggler &&
+    //   toggler.classList.contains(styles.active)
+    // ) {
+    //   setTimeout(() => {
+    //     toggler.click();
+    //   }, 100);
+    // }
+    // resetYOffset();
   };
 
   return (

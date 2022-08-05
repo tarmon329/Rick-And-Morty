@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Cards from "../../components/Cards/Cards";
 import DropdownFilter from "../../components/Filters/DropdownFilter/DropdownFilter";
 import Loader from "../../components/UI/Loader/Loader";
-import { episodesOptions } from "../../data/filterOptions";
+import { episodesOptions } from "../../constants/filterOptions";
 
 import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";

@@ -20,7 +20,7 @@ const PageStartLink = () => {
       data-aos-offset="800"
       className={`${styles.link} aos-init aos-animate`}
     >
-      ↑
+      &uarr;
     </div>
   );
 };

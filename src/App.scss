@@ -3,17 +3,14 @@
     color: var(--color-primary) !important;
     font-weight: bold;
     border-bottom: 3px solid var(--color-primary) !important;
+    padding-bottom: 5px;
+
+    &:last-of-type {
+      margin-bottom: 1rem;
+    }
   }
 
   @media screen and (max-width: 62.5em) {
-    padding: 0;
-    margin: 1rem;
-    transition: border 0s;
-
-    &.active {
-      border-bottom: none !important;
-      box-shadow: -1rem 0 0 var(--bg-color-primary),
-        -1.2rem 0 0 var(--color-primary);
-    }
+    margin: 0 1rem;
   }
 }

@@ -4,7 +4,6 @@ import image from "./assets/404.png";
 
 const FOF = () => {
   const navigateBack = useNavigateBack();
-  console.log(navigateBack);
 
   return (
     <div className={styles.container}>
