@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "./App.scss";
 
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,9 +20,10 @@ import Location from "./Pages/Location/Location";
 import Navbar from "./components/UI/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import DarkMode from "./components/UI/DarkMode/DarkMode";
-import FOF from "./Pages/FOF/FOF";
 import Footer from "./components/UI/Footer/Footer";
 import PageStartLink from "./components/UI/PageStartLink/PageStartLink";
+import Loader from "./components/UI/Loader/Loader";
+const FOF = React.lazy(() => import("./Pages/FOF/FOF"));
 
 const App = () => {
   setDarkModePrefrences();
@@ -34,7 +36,14 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/404" element={<FOF />} />
+          <Route
+            path="/404"
+            element={
+              <Suspense fallback={<Loader />}>
+                <FOF />
+              </Suspense>
+            }
+          />
           <Route path="/*" element={<Navigate to="/404" replace />} />
           <Route path="/characters" element={<Characters />} />
           <Route path="/characters/:id" element={<Character />} />
