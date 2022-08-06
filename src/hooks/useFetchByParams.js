@@ -9,12 +9,13 @@ const useFetchByParams = (type) => {
 
   useEffect(() => {
     (async () => {
-      if (isNaN(+id) === true) {
+      const idAsNum = +id;
+      if (isNaN(idAsNum) === true) {
         setIsLoader(false);
         return setFetchedData({ error: new Error("Invalid URL") });
       }
       setIsLoader(true);
-      const data = await fetchPageData(type, +id);
+      const data = await fetchPageData(type, idAsNum);
       setFetchedData(data);
       setIsLoader(false);
     })();

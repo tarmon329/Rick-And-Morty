@@ -5,7 +5,7 @@ import DropdownFilter from "../../components/Filters/DropdownFilter/DropdownFilt
 
 import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";
-import createLocationDisplay from "../../utils/createLocationDisplay";
+import createLocationCharacters from "../../utils/createLocationCharacters";
 
 import createIdArr from "../../utils/createIdArr";
 
@@ -29,7 +29,10 @@ const Location = () => {
     }
   }, [getPageData, fetchedData]);
 
-  const characterDisplay = createLocationDisplay(fetchedData, charactersData);
+  const characterDisplay = createLocationCharacters(
+    fetchedData,
+    charactersData
+  );
 
   return (
     <React.Fragment>

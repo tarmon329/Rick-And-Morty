@@ -23,16 +23,9 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap;
+  margin-bottom: 2rem;
   gap: 1rem;
-
-  @media only screen and (max-width: 62.5em) {
-    margin-bottom: 2rem;
-    justify-content: space-around;
-  }
-
   @media only screen and (max-width: 47.25em) {
-    margin-bottom: 2rem;
     justify-content: space-evenly;
   }
 }

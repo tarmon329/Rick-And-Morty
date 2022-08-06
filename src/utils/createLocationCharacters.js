@@ -1,6 +1,6 @@
 import Cards from "../components/Cards/Cards";
 
-const createLocationDisplay = (fetchedData, charactersData) => {
+const createLocationCharacters = (fetchedData, charactersData) => {
   let characterDisplay = "";
 
   if (fetchedData?.error || fetchedData?.residents?.length !== 0) {
@@ -17,4 +17,4 @@ const createLocationDisplay = (fetchedData, charactersData) => {
   return characterDisplay;
 };
 
-export default createLocationDisplay;
+export default createLocationCharacters;

@@ -7,11 +7,7 @@ const useFetchMultiEpisodes = (idArray) => {
   const fetchMultiEp = useCallback(
     async (idArr = idArray) => {
       const data = await fetchPageData("episode", idArr);
-      if (Array.isArray(data)) {
-        setFetchedData(data);
-      } else {
-        setFetchedData([data]);
-      }
+      Array.isArray(data) ? setFetchedData(data) : setFetchedData([data]);
     },
     [idArray]
   );

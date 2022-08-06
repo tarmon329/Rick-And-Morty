@@ -3,8 +3,8 @@ import fetchFirstEpisode from "../api/fetchFirstEpisode";
 
 const useFetchFirstEpisode = (episodes) => {
   const [episodeData, setEpisodeData] = useState({
-    episodeName: "",
-    episodeId: "",
+    episodeName: null,
+    episodeId: null,
   });
 
   useEffect(() => {

@@ -18,12 +18,11 @@ const Character = () => {
   const [fetchedData, isLoader] = useFetchByParams("character");
   const navigateBack = useNavigateBack();
   const randomNum = createRandomNum();
-
   useScrollToTop();
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row pt-4">
         <div className={`${styles.buttons} col-lg-3 col-12`}>
           <button onClick={navigateBack} type="submit" className={styles.btn}>
             <FontAwesomeIcon className={styles.icon} icon={faAnglesLeft} />
@@ -34,16 +33,14 @@ const Character = () => {
             Get Schwifty
           </Link>
         </div>
-        <div className="col-lg-8 col-12">
-          <div className="position-relative">
-            {isLoader && <Loader />}
-            {!isLoader && fetchedData.error && (
-              <NoCharacters error={fetchedData.error} />
-            )}
-            {!isLoader && !fetchedData.error && (
-              <CharacterDetail characterData={fetchedData} />
-            )}
-          </div>
+        <div className="col-lg-9 col-12 position-relative">
+          {isLoader && <Loader />}
+          {!isLoader && fetchedData.error && (
+            <NoCharacters error={fetchedData.error} />
+          )}
+          {!isLoader && !fetchedData.error && (
+            <CharacterDetail characterData={fetchedData} />
+          )}
         </div>
       </div>
     </div>

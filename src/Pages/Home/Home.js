@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 import createRandomNum from "../../utils/createRandomNum";
 
-import img from "./assets/hero-main.png";
-import imgMin from "./assets/hero-main-min.png";
+import img from "../../assets/hero-main.png";
+import imgMin from "../../assets/hero-main-min.png";
 
 import styles from "./Home.module.scss";
 

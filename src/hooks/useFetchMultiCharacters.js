@@ -7,11 +7,7 @@ const useFetchMultiCharacters = () => {
   const getPageData = useCallback(
     async (idArr) => {
       const data = await fetchPageData("character", idArr);
-      if (Array.isArray(data)) {
-        setFetchedData(data);
-      } else {
-        setFetchedData([data]);
-      }
+      Array.isArray(data) ? setFetchedData(data) : setFetchedData([data]);
     },
     [setFetchedData]
   );

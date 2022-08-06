@@ -1,6 +1,6 @@
 import useNavigateBack from "../../hooks/useNavigateBack";
 import styles from "./FOF.module.scss";
-import image from "./assets/404.png";
+import image from "../../assets/404.png";
 
 const FOF = () => {
   const navigateBack = useNavigateBack();

@@ -24,19 +24,11 @@
   --bs-navbar-active-color: var(--color-primary);
   --bs-border-width: 0;
   --bs-nav-link-hover-color: var(--color-primary);
+  position: fixed;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: -2px;
+  width: 100%;
   z-index: 50;
   background-color: var(--bg-color-primary);
-
-  & .link {
-    --bs-nav-link-color: var(--bs-body-color);
-    border-bottom: 3px solid transparent;
-    &:hover {
-      color: var(--color-primary-light);
-    }
-  }
 }
 
 .toggler {

@@ -26,12 +26,10 @@ const CharacterDetail = ({ characterData }) => {
   const locationId = getLocationId(location);
 
   return (
-    <article
-      className={`${styles.article} container d-flex justify-content-center`}
-    >
-      <div className="d-flex flex-column gap-3">
-        <img className={`${styles.image} img-fluid`} src={image} alt={name} />
-        <section className={styles.section}>
+    <article className={`${styles.article}`}>
+      <section className={`${styles.section} ${styles["section--left"]}`}>
+        <section className={`${styles.section} ${styles["section--header"]}`}>
+          <img className={`${styles.image} img-fluid`} src={image} alt={name} />
           <h1 className={`${styles.name} ubuntu fw-bold text-center mb-4`}>
             {name}
           </h1>
@@ -44,38 +42,38 @@ const CharacterDetail = ({ characterData }) => {
             {" - "}
             {upperFirstLetter(status)}
           </h2>
-          <div className="d-flex flex-column gap-3">
-            <h3 className="fs-4 fw-normal">
-              Gender:{" "}
-              <FontAwesomeIcon
-                icon={decideIcon(gender)}
-                className={`${styles.icon} ${styles[`icon--${gender}`]}`}
-              />
-              <span className={`${styles.value} fw-bold`}>
-                {upperFirstLetter(gender)}
-              </span>
-            </h3>
-            <h3 className="fs-4 fw-normal">
-              Species:{" "}
-              <FontAwesomeIcon
-                icon={decideIcon(species)}
-                className={styles.icon}
-              />{" "}
-              <span className={`${styles.value} fw-bold`}>
-                {upperFirstLetter(species)}
-              </span>
-            </h3>
-            <h3 className="fs-4 fw-normal">
-              Type:{" "}
-              <FontAwesomeIcon
-                icon={type ? faUserGear : decideIcon(type)}
-                className={styles.icon}
-              />
-              <span className={`${styles.value} fw-bold`}>
-                {upperFirstLetter(type) || "Unknown"}
-              </span>
-            </h3>
-          </div>
+        </section>
+        <section className={`${styles.section} gap-3`}>
+          <h3 className="fs-4 fw-normal">
+            Gender:{" "}
+            <FontAwesomeIcon
+              icon={decideIcon(gender)}
+              className={`${styles.icon} ${styles[`icon--${gender}`]}`}
+            />
+            <span className={`${styles.value} fw-bold`}>
+              {upperFirstLetter(gender)}
+            </span>
+          </h3>
+          <h3 className="fs-4 fw-normal">
+            Species:{" "}
+            <FontAwesomeIcon
+              icon={decideIcon(species)}
+              className={styles.icon}
+            />{" "}
+            <span className={`${styles.value} fw-bold`}>
+              {upperFirstLetter(species)}
+            </span>
+          </h3>
+          <h3 className="fs-4 fw-normal">
+            Type:{" "}
+            <FontAwesomeIcon
+              icon={type ? faUserGear : decideIcon(type)}
+              className={styles.icon}
+            />
+            <span className={`${styles.value} fw-bold`}>
+              {upperFirstLetter(type) || "Unknown"}
+            </span>
+          </h3>
         </section>
 
         <section className={styles.section}>
@@ -90,12 +88,13 @@ const CharacterDetail = ({ characterData }) => {
                 icon={faLocationDot}
                 className={`${styles.icon} ${styles[`icon--location`]}`}
               />{" "}
-              {location.name}
+              {upperFirstLetter(location.name)}
             </Link>
           </div>
         </section>
-      </div>
-      <section className={styles.featuredIn}>
+      </section>
+
+      <section className={styles.section}>
         <h4 className="fs-4 fw-normal">Featured in:</h4>
         <EpisodeList episodes={createIdArr("episodes", episodes)} />
       </section>

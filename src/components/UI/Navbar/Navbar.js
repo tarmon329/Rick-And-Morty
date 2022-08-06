@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { resetYOffset } from "../../../hooks/useScrollCache";
 
+import NavBarLink from "./NavBarLink/NavBarLink";
+
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
@@ -11,47 +13,34 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const closeHandler = (e) => {
-      const toggler = document.querySelector(".navbar-toggler");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    const togglerCloseHandler = (e) => {
       const el = e.target.closest(".navbar-toggler");
       if (
         window.innerWidth < 1000 &&
         toggler?.classList.contains(styles.active) &&
         el !== toggler
       ) {
-        setTimeout(() => {
-          toggler.click();
-        }, 100);
+        toggler.click();
       }
     };
 
-    document.documentElement.addEventListener("click", closeHandler);
+    document.documentElement.addEventListener("click", togglerCloseHandler);
 
     return () => {
-      document.documentElement.removeEventListener("click", closeHandler);
+      document.documentElement.removeEventListener(
+        "click",
+        togglerCloseHandler
+      );
     };
   }, []);
 
-  const closeHandler = () => {
-    resetYOffset();
-    // const toggler = document.querySelector(".navbar-toggler");
-    // if (
-    //   window.innerWidth < 1000 &&
-    //   toggler &&
-    //   toggler.classList.contains(styles.active)
-    // ) {
-    //   setTimeout(() => {
-    //     toggler.click();
-    //   }, 100);
-    // }
-    // resetYOffset();
-  };
-
   return (
-    <nav className={`${styles.navbar} navbar navbar-expand-lg mb-4`}>
+    <nav className={`${styles.navbar} navbar navbar-expand-lg`}>
       <div className="container">
         <NavLink to="/" className={`${styles.logo} nav-logo`}>
-          <h1 onClick={closeHandler} className="fs-3 ubuntu navbar-brand">
+          <h1 onClick={resetYOffset} className="fs-3 ubuntu navbar-brand">
             Rick & Morty <span className="text-primary">WiKi</span>
           </h1>
         </NavLink>
@@ -114,21 +103,9 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            <li onClick={closeHandler} className="nav-item">
-              <NavLink to="/characters" className={`${styles.link} nav-link`}>
-                Characters
-              </NavLink>
-            </li>
-            <li onClick={closeHandler} className="nav-item">
-              <NavLink to="/episode" className={`${styles.link} nav-link`}>
-                Episode
-              </NavLink>
-            </li>
-            <li onClick={closeHandler} className="nav-item">
-              <NavLink to="/location" className={`${styles.link} nav-link`}>
-                Location
-              </NavLink>
-            </li>
+            <NavBarLink type={"characters"} />
+            <NavBarLink type={"episode"} />
+            <NavBarLink type={"location"} />
           </ul>
         </div>
       </div>
