@@ -53,10 +53,10 @@ const Location = () => {
         </header>
       )}
       <div className="container">
-        <div className="row">
+        <div className="row ">
           <DropdownFilter type={"Location"} options={locationsOptions} />
           <div className="col-lg-8 col-12">
-            <div className="row ">
+            <div className="row justify-content-start ">
               {isLoader && <Loader />}
               {!isLoader && characterDisplay}
             </div>
