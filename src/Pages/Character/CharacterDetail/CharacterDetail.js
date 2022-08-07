@@ -9,6 +9,8 @@ import CharacterDetailHeader from "./CharacterDetailHeader";
 import CharacterDetailDescription from "./CharacterDetailDescription";
 import CharacterDetailLocation from "./CharacterDetailLocation";
 
+import { EPISODESLOWER } from "../../../constants/constants";
+
 const CharacterDetail = ({ characterData }) => {
   let {
     image,
@@ -34,7 +36,7 @@ const CharacterDetail = ({ characterData }) => {
         />
         <CharacterDetailLocation location={location} locationId={locationId} />
       </section>
-      <EpisodeList episodes={createIdArr("episodes", episodes)} />
+      <EpisodeList episodes={createIdArr(EPISODESLOWER, episodes)} />
     </article>
   );
 };

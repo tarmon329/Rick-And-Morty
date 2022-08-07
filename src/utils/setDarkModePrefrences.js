@@ -1,10 +1,12 @@
+import { DARKMODE } from "../constants/constants";
+
 const setDarkModePrefrences = () => {
   if (
     window.matchMedia("(prefers-color-scheme: dark)").matches &&
-    localStorage.getItem("darkMode") === null
+    localStorage.getItem(DARKMODE) === null
   ) {
     setTimeout(() => {
-      document.getElementById("toggle").click();
+      document.getElementById(DARKMODE).click();
     }, 500);
   }
 };

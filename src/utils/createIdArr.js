@@ -1,3 +1,9 @@
+import {
+  EPISODELOWER,
+  EPISODESLOWER,
+  LOCATIONLOWER,
+} from "../constants/constants";
+
 const createIdArr = (type, arr) => {
   const mapData = (data) => {
     return data.map((character) => {
@@ -6,15 +12,15 @@ const createIdArr = (type, arr) => {
     });
   };
 
-  if (type === "episode") {
+  if (type === EPISODELOWER) {
     return mapData(arr.characters);
   }
 
-  if (type === "episodes") {
+  if (type === EPISODESLOWER) {
     return mapData(arr);
   }
 
-  if (type === "location") {
+  if (type === LOCATIONLOWER) {
     return mapData(arr.residents);
   }
 };

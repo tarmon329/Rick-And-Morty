@@ -15,7 +15,7 @@ const FOF = () => {
       <h1 className={styles.h1}>How did you get here?</h1>
       <button
         onClick={navigateBack}
-        type="submit"
+        type="button"
         className={`${styles.btn} btn btn-primary fs-5`}
       >
         Return

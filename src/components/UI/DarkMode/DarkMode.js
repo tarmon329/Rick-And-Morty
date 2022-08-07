@@ -1,11 +1,12 @@
+import { DARKMODE } from "../../../constants/constants";
 import useDarkModePrefrences from "../../../hooks/useDarkModePrefrences";
 import styles from "./DarkMode.module.scss";
 
 const changeDarkMode = () => {
-  document.documentElement.classList.toggle("darkMode");
+  document.documentElement.classList.toggle(DARKMODE);
   localStorage.setItem(
-    "darkMode",
-    document.documentElement.classList.contains("darkMode")
+    DARKMODE,
+    document.documentElement.classList.contains(DARKMODE)
   );
 };
 

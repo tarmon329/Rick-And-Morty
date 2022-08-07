@@ -14,8 +14,10 @@ import styles from "./Character.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft, faDice } from "@fortawesome/free-solid-svg-icons";
 
+import { CHARACTERLOWER } from "../../constants/constants";
+
 const Character = () => {
-  const [fetchedData, isLoader] = useFetchByParams("character");
+  const [fetchedData, isLoader] = useFetchByParams(CHARACTERLOWER);
   const navigateBack = useNavigateBack();
   const randomNum = createRandomNum();
   useScrollToTop();
@@ -24,7 +26,7 @@ const Character = () => {
     <div className="container">
       <div className="row pt-4">
         <div className={`${styles.buttons} col-lg-3 col-12`}>
-          <button onClick={navigateBack} type="submit" className={styles.btn}>
+          <button onClick={navigateBack} type="button" className={styles.btn}>
             <FontAwesomeIcon className={styles.icon} icon={faAnglesLeft} />
             Return
           </button>

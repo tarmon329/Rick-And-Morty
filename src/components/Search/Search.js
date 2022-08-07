@@ -12,6 +12,7 @@ const Search = () => {
   const { filter } = useSelector((state) => state);
   const inputRef = useRef();
   const dispatch = useDispatch();
+
   useEffect(() => {
     const ref = inputRef.current;
     ref.value = filter.name;
@@ -21,7 +22,7 @@ const Search = () => {
     e?.preventDefault();
     clearTimeout(inputTimer);
     dispatch(resetPage());
-    dispatch(setName(inputRef.current.value));
+    dispatch(setName(inputRef.current.value.trim()));
   };
   const inputChangeHandler = () => {
     clearTimeout(inputTimer);

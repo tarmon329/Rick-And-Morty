@@ -1,9 +1,13 @@
-import Category from "../Category/Category";
-import * as options from "../../../constants/filterOptions";
-import styles from "./CharacterFilter.module.scss";
 import { useDispatch } from "react-redux";
 import { resetFilters } from "../../../features/filter/filterSlice";
 import { resetPage } from "../../../features/pagination/paginationSlice";
+
+import Category from "../Category/Category";
+
+import * as options from "../../../constants/filterOptions";
+
+import styles from "./CharacterFilter.module.scss";
+import { GENDER, SPECIES, STATUS } from "../../../constants/constants";
 
 const CharacterFilter = () => {
   const dispatch = useDispatch();
@@ -24,9 +28,9 @@ const CharacterFilter = () => {
       </div>
 
       <div className={`${styles.accordion} accordion`} id="accordion">
-        <Category type={"Status"} options={options.statusOptions} />
-        <Category type={"Species"} options={options.speciesOptions} />
-        <Category type={"Gender"} options={options.gendersOptions} />
+        <Category type={STATUS} options={options.statusOptions} />
+        <Category type={SPECIES} options={options.speciesOptions} />
+        <Category type={GENDER} options={options.gendersOptions} />
       </div>
     </div>
   );

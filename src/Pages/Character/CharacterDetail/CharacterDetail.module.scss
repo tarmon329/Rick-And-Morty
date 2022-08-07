@@ -46,6 +46,10 @@
   &--left {
     margin: 0 auto;
     width: max-content;
+    @media only screen and (max-width: 766px) {
+      width: auto;
+      max-width: 100vw;
+    }
   }
 }
 

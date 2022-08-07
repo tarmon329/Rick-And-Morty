@@ -4,6 +4,12 @@ import { resetYOffset } from "../../../hooks/useScrollCache";
 
 import NavBarLink from "./NavBarLink/NavBarLink";
 
+import {
+  CHARACTERSLOWER,
+  EPISODELOWER,
+  LOCATIONLOWER,
+} from "../../../constants/constants";
+
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
@@ -22,7 +28,9 @@ const Navbar = () => {
         toggler?.classList.contains(styles.active) &&
         el !== toggler
       ) {
-        toggler.click();
+        setTimeout(() => {
+          toggler.click();
+        }, 100);
       }
     };
 
@@ -103,9 +111,9 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            <NavBarLink type={"characters"} />
-            <NavBarLink type={"episode"} />
-            <NavBarLink type={"location"} />
+            <NavBarLink type={CHARACTERSLOWER} />
+            <NavBarLink type={EPISODELOWER} />
+            <NavBarLink type={LOCATIONLOWER} />
           </ul>
         </div>
       </div>

@@ -7,19 +7,22 @@ import { episodesOptions } from "../../constants/filterOptions";
 
 import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";
+import useScrollCache from "../../hooks/useScrollCache";
+
 import createIdArr from "../../utils/createIdArr";
 
 import styles from "./Episode.module.scss";
-import useScrollCache from "../../hooks/useScrollCache";
+
+import { EPISODE, EPISODELOWER } from "../../constants/constants";
 
 const Episode = () => {
-  const [fetchedData, isLoader] = useFetchByParams("episode");
+  const [fetchedData, isLoader] = useFetchByParams(EPISODELOWER);
   const [charactersData, getPageData] = useFetchMultiCharacters();
-  useScrollCache("Episode");
+  useScrollCache(EPISODE);
 
   useEffect(() => {
     if (fetchedData.length !== 0 && !fetchedData.error) {
-      getPageData(createIdArr("episode", fetchedData));
+      getPageData(createIdArr(EPISODELOWER, fetchedData));
     }
   }, [getPageData, fetchedData]);
 
@@ -39,7 +42,7 @@ const Episode = () => {
       )}
       <div className="container">
         <div className="row">
-          <DropdownFilter type={"Episode"} options={episodesOptions} />
+          <DropdownFilter type={EPISODE} options={episodesOptions} />
           <div className="col-lg-8 col-12">
             <div className="row justify-content-start">
               {isLoader && <Loader />}
