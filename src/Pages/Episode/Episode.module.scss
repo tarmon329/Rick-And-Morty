@@ -1,12 +1,14 @@
+@use "../../SCSS/mixins";
+
 .name {
   color: var(--color-primary);
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     display: block;
   }
 }
 
 .date {
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     display: block;
   }
 }

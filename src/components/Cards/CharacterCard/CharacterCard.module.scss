@@ -1,3 +1,5 @@
+@use "../../../SCSS/mixins";
+
 .card {
   border: 2px solid #666;
   border-radius: 5px;
@@ -6,7 +8,7 @@
   background-color: var(--bg-color-primary);
   transition: all 0.3s;
 
-  @media only screen and (min-width: 62.5em) {
+  @include mixins.respond(mixins.$desktop) {
     font-size: x-large;
     & * {
       font-size: inherit;
@@ -33,7 +35,7 @@
   min-height: 3.6rem;
   font-size: 1.25rem;
 
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     font-size: 1.5rem;
   }
 }
@@ -89,7 +91,7 @@
 .image {
   transition: all 0.5s ease;
 
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     width: 100%;
   }
 }

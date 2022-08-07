@@ -1,3 +1,5 @@
+@use "../../../SCSS/mixins";
+
 .toggle {
   --size: 2rem;
 
@@ -16,7 +18,7 @@
   right: 1.2rem;
   z-index: 100;
 
-  @media screen and (max-width: 68.75em) {
+  @include mixins.respond(mixins.$darkMode) {
     top: unset;
     bottom: 1.2rem;
     right: 1.2rem;

@@ -1,3 +1,4 @@
+@use "./SCSS/mixins";
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
 #root {
@@ -16,7 +17,7 @@ body {
 main > :first-child {
   padding-top: 5rem;
 
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     padding-top: 6.5rem;
   }
 }

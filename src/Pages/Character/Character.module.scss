@@ -1,3 +1,5 @@
+@use "../../SCSS/mixins";
+
 .btn {
   display: flex;
   align-items: center;
@@ -25,7 +27,7 @@
   justify-content: center;
   margin-bottom: 2rem;
   gap: 1rem;
-  @media only screen and (max-width: 47.25em) {
+  @include mixins.respond(mixins.$bootstrapTablet) {
     justify-content: space-evenly;
   }
 }

@@ -1,3 +1,5 @@
+@use "../../../SCSS/mixins";
+
 .input {
   display: none;
 
@@ -24,7 +26,7 @@
     color: #bfde42;
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @include mixins.respond(mixins.$computerScreen) {
     &:hover {
       border-color: #cde56c;
       background-color: #cde56c;

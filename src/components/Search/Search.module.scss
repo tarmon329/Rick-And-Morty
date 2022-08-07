@@ -1,3 +1,5 @@
+@use "../../SCSS/mixins";
+
 .form {
   padding: 0 0.5rem;
 }
@@ -12,7 +14,7 @@
   transition: all 0.2s;
   color: var(--bs-primary-rgb);
 
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     width: 80%;
   }
 
@@ -46,7 +48,7 @@
 
   border-radius: 0 8px 8px 0;
 
-  @media (hover: hover) and (pointer: fine) {
+  @include mixins.respond(mixins.$computerScreen) {
     &::before {
       content: "";
       position: absolute;

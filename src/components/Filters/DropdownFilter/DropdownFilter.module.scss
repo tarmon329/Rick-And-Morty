@@ -1,3 +1,4 @@
+@use "../../../SCSS/mixins";
 .container {
   width: 33%;
 
@@ -5,14 +6,13 @@
     color: var(--bs-body-color);
     background-color: var(--bg-color-primary);
 
-
     &:focus {
       border-color: var(--color-primary);
       box-shadow: 0 0 0 0.25rem rgba(203, 228, 103, 50%);
     }
   }
 
-  @media only screen and (max-width: 62.5em) {
+  @include mixins.respond(mixins.$tablet) {
     width: 100%;
   }
 }
