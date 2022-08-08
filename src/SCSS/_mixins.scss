@@ -8,7 +8,7 @@
 < 768 px: bootstrapTablet (48em)
 < 1000 px: tablet (62.5em)
 > 1000 px: desktop (62.5em)
-< 1100 px: darkMode (68.75em)
+< 1100 px: darkMode (78.125em)
 For computer ONLY: computerScreen
 
 */
@@ -59,7 +59,7 @@ $computerScreen: "computerScreen";
     }
   }
   @if $breakpoint == $darkMode {
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: 78.125em) {
       @content;
     }
   }

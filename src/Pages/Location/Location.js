@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Loader from "../../components/UI/Loader/Loader";
 import DropdownFilter from "../../components/Filters/DropdownFilter/DropdownFilter";
 
-import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";
 import createLocationCharacters from "../../utils/createLocationCharacters";
 
@@ -16,10 +15,11 @@ import useFetchWithFunc from "../../hooks/useFetchWithFunc";
 import upperFirstLetter from "../../utils/upperFirstLetter";
 
 import { LOCATION, LOCATIONLOWER } from "../../constants/constants";
+import useFetchCharacters from "../../hooks/useFetchCharacters";
 
 const Location = () => {
   const [locationData, isLoader] = useFetchByParams(LOCATIONLOWER);
-  const [charactersData, getPageData] = useFetchMultiCharacters();
+  const [charactersData, getPageData] = useFetchCharacters();
   const locationsOptions = useFetchWithFunc(fetchAllLocations);
   useScrollCache(LOCATION);
 

@@ -5,7 +5,6 @@ import DropdownFilter from "../../components/Filters/DropdownFilter/DropdownFilt
 import Loader from "../../components/UI/Loader/Loader";
 import { episodesOptions } from "../../constants/filterOptions";
 
-import useFetchMultiCharacters from "../../hooks/useFetchMultiCharacters";
 import useFetchByParams from "../../hooks/useFetchByParams";
 import useScrollCache from "../../hooks/useScrollCache";
 
@@ -14,10 +13,11 @@ import createIdArr from "../../utils/createIdArr";
 import styles from "./Episode.module.scss";
 
 import { EPISODE, EPISODELOWER } from "../../constants/constants";
+import useFetchCharacters from "../../hooks/useFetchCharacters";
 
 const Episode = () => {
   const [fetchedData, isLoader] = useFetchByParams(EPISODELOWER);
-  const [charactersData, getPageData] = useFetchMultiCharacters();
+  const [charactersData, getPageData] = useFetchCharacters();
   useScrollCache(EPISODE);
 
   useEffect(() => {

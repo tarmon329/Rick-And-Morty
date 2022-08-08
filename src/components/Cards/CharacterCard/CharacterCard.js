@@ -1,15 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import useFetchFirstEpisode from "../../../hooks/useFetchFirstEpisode";
+import fetchFirstEpisode from "../../../api/fetchFirstEpisode";
+import useFetchWithFunc from "../../../hooks/useFetchWithFunc";
 import getLocationId from "../../../utils/getLocationId";
 import upperFirstLetter from "../../../utils/upperFirstLetter";
 
 import styles from "./CharacterCard.module.scss";
 
 const CharacterCard = ({ characterData }) => {
-  let { id, image, name, status, location, episode } = characterData;
-  const { episodeName, episodeId } = useFetchFirstEpisode(episode);
+  let { id, image, name, status, location, episode: episodes } = characterData;
+  const { name: episodeName, id: episodeId } = useFetchWithFunc(
+    fetchFirstEpisode,
+    episodes[0],
+    {
+      episodeName: null,
+      episodeId: null,
+    }
+  );
   const locationId = getLocationId(location);
 
   return (

@@ -14,9 +14,8 @@ import { CHARACTERS } from "../../constants/constants";
 const Characters = () => {
   const [isLoader, setIsLoader] = useState(true);
   const { pagination, filter } = useSelector((state) => state);
-  const [{ info, results, error }, getPageData] = useFetchCharacters();
+  const [{ results, error, info }, getPageData] = useFetchCharacters();
   useScrollCache(CHARACTERS);
-
   useEffect(() => {
     (async () => {
       setIsLoader(true);

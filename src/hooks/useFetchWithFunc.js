@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 
-const useFetchWithFunc = (fc) => {
-  const [fetchedData, setFetchedData] = useState([]);
-
+const useFetchWithFunc = (fc, args, initialState = []) => {
+  const [fetchedData, setFetchedData] = useState(initialState);
   useEffect(() => {
     (async () => {
-      const data = await fc();
+      const data = await fc(args);
       if (data.error) {
         setFetchedData({ error: data.error });
       } else {
         setFetchedData(data);
       }
     })();
-  }, [fc]);
+  }, [fc, args]);
 
   return fetchedData;
 };
