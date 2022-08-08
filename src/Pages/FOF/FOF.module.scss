@@ -22,6 +22,9 @@
 .image {
   width: 100%;
   max-width: 25rem;
+  @include mixins.respond(mixins.$phone) {
+    width: 75%;
+  }
 }
 
 .btn {
@@ -45,6 +48,6 @@
 
   @include mixins.respond(mixins.$phone) {
     align-self: stretch;
-    min-width: none;
+    min-width: unset;
   }
 }
