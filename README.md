@@ -15,8 +15,8 @@ The app was created with the use of:
 - [Lottie Files](https://lottiefiles.com/)
 
 
-The App has [`built in funcionallity`](src/hooks/useDarkModePrefrences.js) to decide based on the machine prefrences if to display dark mode or light mode, and to preserve it.
-If changed manually, it will ignore the machine prefrences.
+The App has built in funcionallity ([`useDarkModePrefrences`](src/hooks/useDarkModePrefrences.js), [`setDarkModePrefrences`](src/utils/setDarkModePrefrences.js)) to decide based on the machine prefrences whether to display dark mode or light mode, and to preserve it.\
+* If changed manually, it will ignore the machine prefrences and maintain the user prefrences.
 
 The App has the [`funcionallity`](src/hooks/useScrollCache.js) to cache scrolling location per page, and scroll back to the last location when when returning to it.
 * clicking on the navigation`s links will reset all cache. 
