@@ -29,6 +29,10 @@
       }
     }
   }
+
+  @include mixins.respond(mixins.$phone) {
+    height: 95%;
+  }
 }
 
 .name {
@@ -49,6 +53,9 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    @include mixins.respond(mixins.$phone) {
+      gap: 0.2rem;
+    }
   }
 }
 
@@ -61,6 +68,10 @@
 
     &:first-of-type {
       min-height: 3.6rem;
+
+      @include mixins.respond(mixins.$phone) {
+        min-height: 2.6rem;
+      }
     }
   }
 
@@ -74,6 +85,10 @@
   top: 10px;
   right: 20px;
   font-size: 17px;
+
+  @include mixins.respond(mixins.$phone) {
+    font-size: 1.5rem;
+  }
 
   &.Alive {
     background-color: #006400;

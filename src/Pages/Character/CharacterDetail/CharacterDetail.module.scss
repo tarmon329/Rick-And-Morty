@@ -4,8 +4,13 @@
   display: flex;
   gap: 3rem;
   justify-content: center;
+
   @include mixins.respond(mixins.$bootstrapTablet) {
     flex-direction: column;
+  }
+
+  @include mixins.respond(mixins.$phone) {
+    gap: 0rem;
   }
 }
 
