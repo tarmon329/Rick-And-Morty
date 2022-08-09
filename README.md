@@ -1,16 +1,29 @@
 # Rick and Morty Wiki 👽🧪
 
-This project is a Rick and Morty character WiKi.
-The application consists of a listing of all the series' characters, episodes and locations, as well as a details page for each one of them. The app uses [Rick and Morty REST API](https://rickandmortyapi.com/).
+This project is a Rick and Morty character WiKi.\
+The application consists of a listing of all the characters, episodes and locations from the series, as well as a details page for each character, including information about the character, and a list of the episodes it has appeared in.\
+The app consumes the [Rick and Morty REST API](https://rickandmortyapi.com/).
 
-The app created with [React](https://reactjs.org/), [React-Redux](https://react-redux.js.org/), [Bootstrap](https://getbootstrap.com/),[FontAwsome](https://fontawesome.com/).
+The app was created with the use of:
 
-The App has built in funcionallity to decide based on the machine prefrences if to display dark mode or light mode, and to preserve it.
+- [React](https://reactjs.org/)
+- [React-Redux](https://react-redux.js.org/)
+- [React-Router](https://reactrouter.com/)
+- [React-Paginate](https://www.npmjs.com/package/react-paginate)
+- [Bootstrap](https://getbootstrap.com/)
+- [FontAwsome](https://fontawesome.com/)
+- [Lottie Files](https://lottiefiles.com/)
+
+
+The App has [`built in funcionallity`](src/hooks/useDarkModePrefrences.js) to decide based on the machine prefrences if to display dark mode or light mode, and to preserve it.
 If changed manually, it will ignore the machine prefrences.
+
+The App has the [`funcionallity`](src/hooks/useScrollCache.js) to cache scrolling location per page, and scroll back to the last location when when returning to it.
+* clicking on the navigation`s links will reset all cache. 
 
 ## Screen Shots 💻
 
-Here are a few Screen shots from the app:
+Here are a few screen shots and videos from the app:
 
 [App Preview.webm](https://user-images.githubusercontent.com/97041347/183472003-97ced014-8111-452e-94ae-b85d22ebe7da.webm)
 
@@ -36,13 +49,8 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
 
