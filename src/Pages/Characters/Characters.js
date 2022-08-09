@@ -15,14 +15,15 @@ const Characters = () => {
   const [isLoader, setIsLoader] = useState(true);
   const { pagination, filter } = useSelector((state) => state);
   const [{ results, error, info }, getPageData] = useFetchCharacters();
-  useScrollCache(CHARACTERS);
+  const setAllowCache = useScrollCache(CHARACTERS);
   useEffect(() => {
     (async () => {
       setIsLoader(true);
       await getPageData({ ...filter, ...pagination });
       setIsLoader(false);
+      setAllowCache(true);
     })();
-  }, [pagination, filter, getPageData]);
+  }, [pagination, filter, getPageData, setAllowCache]);
 
   return (
     <React.Fragment>

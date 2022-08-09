@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import fetchFirstEpisode from "../../../api/fetchFirstEpisode";
 import useFetch from "../../../hooks/useFetch";
+import { resetYOffset } from "../../../hooks/useScrollCache";
 import getLocationId from "../../../utils/getLocationId";
 import upperFirstLetter from "../../../utils/upperFirstLetter";
 
@@ -31,6 +32,7 @@ const CharacterCard = ({ characterData }) => {
           <div>
             <h4 className="fs-6 fw-normal text-secondary">First Seen At: </h4>
             <Link
+              onClick={resetYOffset}
               to={`/episode/${episodeId}`}
               className={`${styles.link} fs-5 ubuntu `}
             >
@@ -42,6 +44,7 @@ const CharacterCard = ({ characterData }) => {
               Last Known Location:
             </h4>
             <Link
+              onClick={resetYOffset}
               to={`/location/${locationId}`}
               className={`${styles.link} fs-5 ubuntu`}
             >

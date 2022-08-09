@@ -18,13 +18,16 @@ import useFetchCharacters from "../../hooks/useFetchCharacters";
 const Episode = () => {
   const [fetchedData, isLoader] = useFetchByParams(EPISODELOWER);
   const [charactersData, getPageData] = useFetchCharacters();
-  useScrollCache(EPISODE);
+  const setAllowCache = useScrollCache(EPISODE);
 
   useEffect(() => {
-    if (fetchedData.length !== 0 && !fetchedData.error) {
-      getPageData(createIdArr(EPISODELOWER, fetchedData));
-    }
-  }, [getPageData, fetchedData]);
+    (async () => {
+      if (fetchedData.length !== 0 && !fetchedData.error) {
+        await getPageData(createIdArr(EPISODELOWER, fetchedData));
+        setAllowCache(true);
+      }
+    })();
+  }, [getPageData, fetchedData, setAllowCache]);
 
   return (
     <React.Fragment>

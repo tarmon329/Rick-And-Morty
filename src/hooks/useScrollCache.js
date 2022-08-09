@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 class ScrollCache {
   static #queryMap = new Map();
@@ -21,25 +21,21 @@ class ScrollCache {
 export const resetYOffset = ScrollCache.resetYOffset.bind(ScrollCache);
 
 const useScrollCache = (page) => {
+  const [allowCache, setAllowCache] = useState(false);
   const currentScroll = ScrollCache.getYOffset(page) ?? 0;
 
   useEffect(() => {
     const scrollHandler = () => ScrollCache.setYOffset(page, window.scrollY);
-    setTimeout(() => {
+    if (allowCache) {
+      window.scrollTo({ top: currentScroll, behavior: "smooth" });
       window.addEventListener("scroll", scrollHandler);
-    }, 100);
+    }
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, [page]);
+  }, [page, currentScroll, allowCache]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: currentScroll, behavior: "smooth" });
-    }, 100);
-  }, [currentScroll]);
-
-  return { currentScroll };
+  return setAllowCache;
 };
 
 export default useScrollCache;

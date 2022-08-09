@@ -21,17 +21,20 @@ const Location = () => {
   const [locationData, isLoader] = useFetchByParams(LOCATIONLOWER);
   const [charactersData, getPageData] = useFetchCharacters();
   const locationsOptions = useFetch(fetchAllLocations);
-  useScrollCache(LOCATION);
+  const setAllowCache = useScrollCache(LOCATION);
 
   useEffect(() => {
-    if (
-      locationData.length !== 0 &&
-      !locationData.error &&
-      locationData.residents.length !== 0
-    ) {
-      getPageData(createIdArr(LOCATIONLOWER, locationData));
-    }
-  }, [getPageData, locationData]);
+    (async () => {
+      if (
+        locationData.length !== 0 &&
+        !locationData.error &&
+        locationData.residents.length !== 0
+      ) {
+        await getPageData(createIdArr(LOCATIONLOWER, locationData));
+        setAllowCache(true);
+      }
+    })();
+  }, [getPageData, locationData, setAllowCache]);
 
   const characterDisplay = createLocationCharacters(
     locationData,
