@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Cards from "../../components/Cards/Cards";
 import DropdownFilter from "../../components/Filters/DropdownFilter/DropdownFilter";
 import Loader from "../../components/UI/Loader/Loader";
-import { EPISODESOPTIONS } from "../../constants/constants";
+// import { EPISODESOPTIONS } from "../../constants/constants";
 
 import useFetchByParams from "../../hooks/useFetchByParams";
 import useScrollCache from "../../hooks/useScrollCache";
@@ -14,11 +14,15 @@ import styles from "./Episode.module.scss";
 
 import { EPISODE, EPISODELOWER } from "../../constants/constants";
 import useFetchCharacters from "../../hooks/useFetchCharacters";
+import useFetch from "../../hooks/useFetch";
+import fetchAllEpisodes from "../../api/fetchAllEpisodes";
 
 const Episode = () => {
   const [fetchedData, isLoader] = useFetchByParams(EPISODELOWER);
   const [charactersData, getPageData] = useFetchCharacters();
   const setAllowCache = useScrollCache(EPISODE);
+
+  const episodesOptions = useFetch(fetchAllEpisodes);
 
   useEffect(() => {
     (async () => {
@@ -45,7 +49,7 @@ const Episode = () => {
       )}
       <div className="container">
         <div className="row">
-          <DropdownFilter type={EPISODE} options={EPISODESOPTIONS} />
+          <DropdownFilter type={EPISODE} options={episodesOptions} />
           <div className="col-lg-8 col-12">
             <div className="row justify-content-start">
               {isLoader && <Loader />}

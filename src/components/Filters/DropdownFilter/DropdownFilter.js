@@ -12,17 +12,8 @@ const DropdownFilter = ({ type, options }) => {
     navigate(`/${type.toLowerCase()}/${e.target.value}`);
   };
 
-  let optionsMarkup = "";
-  if (type === LOCATION) {
-    optionsMarkup = options?.error ? (
-      <option value="1">Error: {options.error}</option>
-    ) : (
-      createOptionsMarkup(options)
-    );
-  }
-  if (type === EPISODE) {
-    optionsMarkup = options;
-  }
+  const optionsMarkup = createOptionsMarkup(type, options);
+
   return (
     <div className={`${styles.container} col-lg-3 col-12 mb-4`}>
       <h4 className="text-center mb-4">Pick {type}</h4>

@@ -1,16 +1,27 @@
 import CharacterCard from "../components/Cards/CharacterCard/CharacterCard";
 
 const createCharactersDisplay = (charactersData) => {
-  return charactersData.map((characterData) => {
+  if (Array.isArray(charactersData)) {
+    return charactersData.map((characterData) => {
+      return (
+        <div
+          key={characterData.id}
+          className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative"
+        >
+          <CharacterCard characterData={characterData} />
+        </div>
+      );
+    });
+  } else {
     return (
       <div
-        key={characterData.id}
+        key={charactersData.id}
         className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative"
       >
-        <CharacterCard characterData={characterData} />
+        <CharacterCard characterData={charactersData} />
       </div>
     );
-  });
+  }
 };
 
 export default createCharactersDisplay;
