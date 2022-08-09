@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Cards from "../../components/Cards/Cards";
 import DropdownFilter from "../../components/Filters/DropdownFilter/DropdownFilter";
 import Loader from "../../components/UI/Loader/Loader";
-import { episodesOptions } from "../../constants/filterOptions";
+import { EPISODESOPTIONS } from "../../constants/constants";
 
 import useFetchByParams from "../../hooks/useFetchByParams";
 import useScrollCache from "../../hooks/useScrollCache";
@@ -42,7 +42,7 @@ const Episode = () => {
       )}
       <div className="container">
         <div className="row">
-          <DropdownFilter type={EPISODE} options={episodesOptions} />
+          <DropdownFilter type={EPISODE} options={EPISODESOPTIONS} />
           <div className="col-lg-8 col-12">
             <div className="row justify-content-start">
               {isLoader && <Loader />}

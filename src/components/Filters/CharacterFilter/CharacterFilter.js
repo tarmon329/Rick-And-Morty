@@ -4,10 +4,13 @@ import { resetPage } from "../../../features/pagination/paginationSlice";
 
 import Category from "../Category/Category";
 
-import * as options from "../../../constants/filterOptions";
-
 import styles from "./CharacterFilter.module.scss";
-import { GENDER, SPECIES, STATUS } from "../../../constants/constants";
+import {
+  GENDER,
+  SPECIES,
+  STATUS,
+  FILTEROPTIONS,
+} from "../../../constants/constants";
 
 const CharacterFilter = () => {
   const dispatch = useDispatch();
@@ -28,9 +31,9 @@ const CharacterFilter = () => {
       </div>
 
       <div className={`${styles.accordion} accordion`} id="accordion">
-        <Category type={STATUS} options={options.statusOptions} />
-        <Category type={SPECIES} options={options.speciesOptions} />
-        <Category type={GENDER} options={options.gendersOptions} />
+        <Category type={STATUS} options={FILTEROPTIONS.STATUS} />
+        <Category type={SPECIES} options={FILTEROPTIONS.SPECIES} />
+        <Category type={GENDER} options={FILTEROPTIONS.GENDER} />
       </div>
     </div>
   );

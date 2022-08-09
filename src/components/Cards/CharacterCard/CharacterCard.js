@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import fetchFirstEpisode from "../../../api/fetchFirstEpisode";
-import useFetchWithFunc from "../../../hooks/useFetchWithFunc";
+import useFetch from "../../../hooks/useFetch";
 import getLocationId from "../../../utils/getLocationId";
 import upperFirstLetter from "../../../utils/upperFirstLetter";
 
@@ -10,7 +10,7 @@ import styles from "./CharacterCard.module.scss";
 
 const CharacterCard = ({ characterData }) => {
   let { id, image, name, status, location, episode: episodes } = characterData;
-  const { name: episodeName, id: episodeId } = useFetchWithFunc(
+  const { name: episodeName, id: episodeId } = useFetch(
     fetchFirstEpisode,
     episodes[0],
     {

@@ -1,12 +1,12 @@
 import fetchMultiEpisodes from "../../../api/fetchMultiEpisodes";
 
-import useFetchWithFunc from "../../../hooks/useFetchWithFunc";
+import useFetch from "../../../hooks/useFetch";
 import createEpisodesList from "../../../utils/createEpisodesList";
 
-import styles from "./CharacterDetail.module.scss";
+import styles from "./EpisodeList.module.scss";
 
 const EpisodeList = ({ episodes }) => {
-  const fetchedEpisodes = useFetchWithFunc(fetchMultiEpisodes, episodes);
+  const fetchedEpisodes = useFetch(fetchMultiEpisodes, episodes);
 
   if (fetchedEpisodes.length === 0) return;
 

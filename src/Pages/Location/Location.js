@@ -11,7 +11,7 @@ import createIdArr from "../../utils/createIdArr";
 import styles from "./Location.module.scss";
 import useScrollCache from "../../hooks/useScrollCache";
 import fetchAllLocations from "../../api/fetchAllLocations";
-import useFetchWithFunc from "../../hooks/useFetchWithFunc";
+import useFetch from "../../hooks/useFetch";
 import upperFirstLetter from "../../utils/upperFirstLetter";
 
 import { LOCATION, LOCATIONLOWER } from "../../constants/constants";
@@ -20,7 +20,7 @@ import useFetchCharacters from "../../hooks/useFetchCharacters";
 const Location = () => {
   const [locationData, isLoader] = useFetchByParams(LOCATIONLOWER);
   const [charactersData, getPageData] = useFetchCharacters();
-  const locationsOptions = useFetchWithFunc(fetchAllLocations);
+  const locationsOptions = useFetch(fetchAllLocations);
   useScrollCache(LOCATION);
 
   useEffect(() => {

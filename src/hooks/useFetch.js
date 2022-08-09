@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetchWithFunc = (fc, args, initialState = []) => {
+const useFetch = (fc, args, initialState = []) => {
   const [fetchedData, setFetchedData] = useState(initialState);
   useEffect(() => {
     (async () => {
@@ -16,4 +16,4 @@ const useFetchWithFunc = (fc, args, initialState = []) => {
   return fetchedData;
 };
 
-export default useFetchWithFunc;
+export default useFetch;

@@ -3,7 +3,7 @@ import getLocationId from "../../../utils/getLocationId";
 
 import styles from "./CharacterDetail.module.scss";
 
-import EpisodeList from "./EpisodesList";
+import EpisodeList from "../EpisodeList/EpisodesList";
 
 import CharacterDetailHeader from "./CharacterDetailHeader";
 import CharacterDetailDescription from "./CharacterDetailDescription";

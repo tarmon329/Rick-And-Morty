@@ -1,0 +1,16 @@
+@use "../../../SCSS/mixins";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  &--left {
+    margin: 0 auto;
+    width: max-content;
+    @include mixins.respond(mixins.$bootstrapTablet) {
+      width: auto;
+      max-width: 100vw;
+    }
+  }
+}
