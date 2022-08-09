@@ -2,8 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 import createOptionsMarkup from "../../../utils/createOptionsMarkup";
 
-import { EPISODE, LOCATION } from "../../../constants/constants";
-
 import styles from "./DropdownFilter.module.scss";
 
 const DropdownFilter = ({ type, options }) => {
