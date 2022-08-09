@@ -15,17 +15,17 @@ The app was created with the use of:
 - [Lottie Files](https://lottiefiles.com/)
 
 
-The App has built in funcionallity ([`useDarkModePrefrences`](src/hooks/useDarkModePrefrences.js), [`setDarkModePrefrences`](src/utils/setDarkModePrefrences.js)) to decide based on the machine prefrences whether to display dark mode or light mode, and to preserve it.
+The App has built in functionallity ([`useDarkModePrefrences`](src/hooks/useDarkModePrefrences.js)) to decide based on the machine prefrences whether to display dark mode or light mode, and to preserve it.
 * If changed manually, it will ignore the machine prefrences and maintain the user prefrences.
 
-The App has the [`funcionallity`](src/hooks/useScrollCache.js) to cache scrolling location per page, and scroll back to the last location when when returning to it.
+The App has the functionallity ([`useScrollCache`](src/hooks/useScrollCache.js)) to cache scrolling location per page, and scroll back to the last location when when returning to it.
 * clicking on the navigation`s links will reset all cache. 
 
 ## Screen Shots 💻
 
 Here are a few screen shots and videos from the app:
 
-[App Preview.webm](https://user-images.githubusercontent.com/97041347/183472003-97ced014-8111-452e-94ae-b85d22ebe7da.webm)
+https://user-images.githubusercontent.com/97041347/183637840-9df5d442-db2e-449a-890f-5304aeb526cf.mp4
 
 ![rick-and-morty-wikipedia netlify app_ (2)](https://user-images.githubusercontent.com/97041347/183468690-9306ca65-5c66-48a4-ba07-1ade509167c1.png)
 ![rick-and-morty-wikipedia netlify app_ (3)](https://user-images.githubusercontent.com/97041347/183468694-959535b0-12a4-45ad-abdc-7b6e51c27958.png)
@@ -34,7 +34,8 @@ Here are a few screen shots and videos from the app:
 
 ## Light Mode & Dark Mode 🌗
 
-[Light-Dark Mode.webm](https://user-images.githubusercontent.com/97041347/183472454-1f14de10-3412-45ad-b9b7-561c4efd8591.webm)
+https://user-images.githubusercontent.com/97041347/183637893-7c672b15-4dbc-454a-afdf-5f33961980f3.mp4
+
 
 ## How to run ▶️
 
