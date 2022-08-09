@@ -5,9 +5,7 @@ const setDarkModePrefrences = () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches &&
     localStorage.getItem(DARKMODE) === null
   ) {
-    setTimeout(() => {
-      document.getElementById(DARKMODE).click();
-    }, 500);
+    document.getElementById(DARKMODE).click();
   }
 };
 export default setDarkModePrefrences;

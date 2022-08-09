@@ -11,11 +11,12 @@ const changeDarkMode = () => {
 };
 
 const DarkMode = () => {
-  useDarkModePrefrences();
+  const ref = useDarkModePrefrences();
 
   return (
     <input
-      id="toggle"
+      id={DARKMODE}
+      ref={ref}
       className={styles.toggle}
       type="checkbox"
       onClick={changeDarkMode}

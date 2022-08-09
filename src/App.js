@@ -10,7 +10,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import setDarkModePrefrences from "./utils/setDarkModePrefrences";
+// import setDarkModePrefrences from "./utils/setDarkModePrefrences";
 
 import Characters from "./Pages/Characters/Characters";
 import Character from "./Pages/Character/Character";
@@ -26,8 +26,6 @@ import Loader from "./components/UI/Loader/Loader";
 const FOF = React.lazy(() => import("./Pages/FOF/FOF"));
 
 const App = () => {
-  setDarkModePrefrences();
-
   return (
     <Router>
       <Navbar />
