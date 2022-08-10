@@ -43,7 +43,7 @@ The app is live on: [Rick and Morty Wiki](https://rick-and-morty-wikipedia.netli
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, after installing the dependencies, you can run:
 
 ### `npm start`
 
