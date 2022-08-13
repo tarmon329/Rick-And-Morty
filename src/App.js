@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
-import "./SCSS/bootstrapReset.scss";
+import "./scss/bootstrapReset.scss";
 
 import React, { Suspense } from "react";
 import {

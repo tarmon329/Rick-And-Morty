@@ -16,53 +16,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const decideIcon = (name) => {
+  const icons = {
+    alive: faHeartPulse,
+    dead: faSkull,
+    human: faUser,
+    alien: faUserAstronaut,
+    poopybutthole: faPoo,
+    "mythological creature": faDragon,
+    animal: faPaw,
+    disease: faVirusCovid,
+    robot: faRobot,
+    cronenberg: faBiohazard,
+    male: faMars,
+    female: faVenus,
+    genderless: faGenderless,
+    unknown: faQuestion,
+  };
+
   name = name?.toLowerCase();
-  switch (name) {
-    case "alive":
-      return faHeartPulse;
 
-    case "dead":
-      return faSkull;
-
-    case "human":
-      return faUser;
-
-    case "alien":
-      return faUserAstronaut;
-
-    case "poopybutthole":
-      return faPoo;
-
-    case "mythological creature":
-      return faDragon;
-
-    case "animal":
-      return faPaw;
-
-    case "disease":
-      return faVirusCovid;
-
-    case "robot":
-      return faRobot;
-
-    case "cronenberg":
-      return faBiohazard;
-
-    case "male":
-      return faMars;
-
-    case "female":
-      return faVenus;
-
-    case "genderless":
-      return faGenderless;
-
-    case "unknown":
-      return faQuestion;
-
-    default:
-      return faQuestion;
+  if (!name) {
+    name = "unknown";
   }
+
+  return icons[name];
 };
 
 export default decideIcon;

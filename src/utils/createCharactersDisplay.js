@@ -14,10 +14,7 @@ const createCharactersDisplay = (charactersData) => {
     });
   } else {
     return (
-      <div
-        key={charactersData.id}
-        className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative"
-      >
+      <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative">
         <CharacterCard characterData={charactersData} />
       </div>
     );

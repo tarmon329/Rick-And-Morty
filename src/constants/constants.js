@@ -1,3 +1,5 @@
+export const APIURL = "https://rickandmortyapi.com/api";
+
 export const DARKMODE = "darkMode";
 
 export const EPISODE = "Episode";

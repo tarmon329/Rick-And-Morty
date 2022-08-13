@@ -32,9 +32,12 @@ const createOptionsMarkup = (type, options) => {
   let optionsMarkup = "";
   if (options.error || options.length === 0) {
     optionsMarkup = <option value="1">Error: {options.error}</option>;
-  } else if (type === LOCATION) {
+    return optionsMarkup;
+  }
+  if (type === LOCATION) {
     optionsMarkup = createLocationMarkup(options);
-  } else if (type === EPISODE) {
+  }
+  if (type === EPISODE) {
     optionsMarkup = createOptionMarkup(options);
   }
 

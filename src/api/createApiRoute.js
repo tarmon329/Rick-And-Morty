@@ -1,4 +1,4 @@
-import APIURL from "./APIURL";
+import { APIURL } from "../constants/constants";
 
 const createApiRoute = (dataType, queryOptions) => {
   let api = `${APIURL}/${dataType}/`;
