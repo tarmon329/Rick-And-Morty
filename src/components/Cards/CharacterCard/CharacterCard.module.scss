@@ -27,6 +27,11 @@
       & .hidden-button {
         transform: translateY(0);
       }
+
+      & .badge {
+        opacity: 0.75;
+        box-shadow: 0 0 0.5rem rgba(0 0 0 / 10);
+      }
     }
   }
 
@@ -85,6 +90,7 @@
   top: 10px;
   right: 20px;
   font-size: 17px;
+  transition: all 0.3s ease;
 
   @include mixins.respond(mixins.$phone) {
     font-size: 1.5rem;
