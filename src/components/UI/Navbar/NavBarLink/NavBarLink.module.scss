@@ -1,7 +1,8 @@
 .link {
   --bs-nav-link-color: var(--bs-body-color);
   border-bottom: 3px solid transparent;
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--color-primary-light);
   }
 }
