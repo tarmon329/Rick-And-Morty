@@ -10,8 +10,6 @@ import {
   Navigate,
 } from "react-router-dom";
 
-// import setDarkModePrefrences from "./utils/setDarkModePrefrences";
-
 import Characters from "./Pages/Characters/Characters";
 import Character from "./Pages/Character/Character";
 import Episode from "./Pages/Episode/Episode";
