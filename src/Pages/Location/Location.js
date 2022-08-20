@@ -64,7 +64,7 @@ const Location = () => {
       <div className="container">
         <div className="row ">
           <DropdownFilter type={LOCATION} options={locationsOptions} />
-          <div className="col-lg-8 col-12">
+          <div className={`${styles.row} col-lg-8 col-12`}>
             <div className="row justify-content-start ">
               {isLoader && <Loader />}
               {!isLoader && characterDisplay}

@@ -7,3 +7,9 @@
     display: block;
   }
 }
+
+.row {
+  @include mixins.respond(mixins.$phone) {
+    padding: 0 3rem;
+  }
+}

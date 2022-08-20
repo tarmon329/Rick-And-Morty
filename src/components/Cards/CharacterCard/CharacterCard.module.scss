@@ -37,6 +37,7 @@
 
   @include mixins.respond(mixins.$phone) {
     height: 95%;
+    // padding: 0 2rem;
   }
 }
 
@@ -114,6 +115,9 @@
 
   @include mixins.respond(mixins.$tablet) {
     width: 100%;
+  }
+  @include mixins.respond(mixins.$phone) {
+    // height: 80%;
   }
 }
 

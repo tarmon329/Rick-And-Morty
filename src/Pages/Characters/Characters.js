@@ -11,6 +11,8 @@ import Search from "../../components/Search/Search";
 
 import { CHARACTERS } from "../../constants/constants";
 
+import styles from "./Characters.module.scss";
+
 const Characters = () => {
   const [isLoader, setIsLoader] = useState(true);
   const { pagination, filter } = useSelector((state) => state);
@@ -32,7 +34,7 @@ const Characters = () => {
       <div className="container">
         <div className="row">
           <Filters />
-          <div className="col-lg-8 col-12">
+          <div className={`${styles.row} col-lg-8 col-12`}>
             <div className="row justify-content-start">
               {isLoader && <Loader />}
               {!isLoader && <Cards charactersData={results} error={error} />}
