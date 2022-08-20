@@ -11,6 +11,10 @@
 
   text-transform: uppercase;
   text-align: center;
+
+  @include mixins.respond(mixins.$phone) {
+    padding: 1rem 1rem;
+  }
 }
 
 .h1 {
@@ -23,7 +27,7 @@
   width: 100%;
   max-width: 25rem;
   @include mixins.respond(mixins.$phone) {
-    width: 75%;
+    width: 50%;
   }
 }
 
