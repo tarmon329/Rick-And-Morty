@@ -48,7 +48,7 @@ const CharacterCard = ({ characterData }) => {
               to={`/location/${locationId}`}
               className={`${styles.link} fs-5 ubuntu`}
             >
-              {location.name}
+              {upperFirstLetter(location.name)}
             </Link>
           </div>
         </div>
