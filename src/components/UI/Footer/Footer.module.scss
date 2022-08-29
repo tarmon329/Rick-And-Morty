@@ -24,6 +24,10 @@
     &:hover,
     &:active {
       color: var(--color-primary);
+
+      & svg {
+        fill: var(--color-primary);
+      }
     }
   }
 }
